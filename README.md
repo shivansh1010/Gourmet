@@ -1,14 +1,6 @@
 # Gourmet
 A DBMS Project
 
-## TODO
-- [x] think about what to do
-- [ ] Create database
-- [ ] Create Front End
-- [ ] Create Back End
-- [ ] Create Slide of databse layout
-- [ ] Try to separate back end and front end
-
 ## Naming Rules
 
 ### Table Naming
@@ -18,3 +10,12 @@ A DBMS Project
 ### Attributes Naming
 - Use underscore to separate two words in attributes name ie `user_id` not like  `userid` , `userId`
 - Add prefix to atrribute if attribute is foreign key, see this.
+
+
+## TODO
+- [x] think about what to do
+- [ ] Create database
+- [ ] Create Front End
+- [ ] Create Back End
+- [ ] Create Slide of databse layout
+- [ ] Try to separate back end and front end
