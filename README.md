@@ -22,8 +22,8 @@ A DBMS Project
 
 
 ## Login Details
-**Host**: sql12.freesqldatabase.com
-**Database name**: sql12265642
-**Database user**: sql12265642
-**Database password**: Slv4AuvMsV
-**Port number**: 3306
+- **Host** : sql12.freesqldatabase.com
+- **Database name**: sql12265642
+- **Database user**: sql12265642
+- **Database password**: Slv4AuvMsV
+- **Port number**: 3306
