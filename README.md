@@ -19,3 +19,11 @@ A DBMS Project
 - [ ] Create Back End
 - [ ] Create Slide of databse layout
 - [ ] Try to separate back end and front end
+
+
+## Login Details
+**Host**: sql12.freesqldatabase.com
+**Database name**: sql12265642
+**Database user**: sql12265642
+**Database password**: Slv4AuvMsV
+**Port number**: 3306
