@@ -22,6 +22,7 @@ A DBMS Project
 
 
 ## Login Details
+- **web** : http://www.phpmyadmin.co/
 - **Host** : sql12.freesqldatabase.com
 - **Database name**: sql12265642
 - **Database user**: sql12265642
