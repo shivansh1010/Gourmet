@@ -14,9 +14,11 @@ A DBMS Project
 
 ## TODO
 - [x] think about what to do
-- [ ] Create database
+- [x] Create database
+- [ ] Enter some for dev data
 - [ ] Create Front End
 - [ ] Create Back End
+- [ ] Enter more data
 - [ ] Create Slide of databse layout
 - [ ] Try to separate back end and front end
 
