@@ -2,14 +2,16 @@
 
 A DBMS Project
 
-## Naming Rules
+## INSTRUCTION READ
 
-### Table Naming
+### Naming Rules
+
+#### Table Naming
 
 - Use lowercase - to improve type speed
 - Table name must be singular singular
 
-### Attributes Naming
+#### Attributes Naming
 
 - Use underscore to separate two words in attributes name ie `user_id` not like  `userid` , `userId`
 - Add prefix to atrribute if attribute is foreign key, see this.
