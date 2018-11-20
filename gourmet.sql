@@ -1,10 +1,10 @@
 USE gourmet;
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
+  `id` varchar(25) NOT NULL,
   `pswd` varchar(25) NOT NULL,
   `city` varchar(25) NOT NULL,
-  `mobile_no` varchar(13) DEFAULT NULL,
+  `mobile_no` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mobile_no` (`mobile_no`)
 );
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `address` varchar(200) NOT NULL,
-  `mobile_no` varchar(13) DEFAULT NULL,
+  `mobile_no` int(10) DEFAULT NULL,
   `star` int(11) DEFAULT NULL,
   `city` varchar(20) DEFAULT NULL,
   `open_time` time NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `serves` (
 
 
 CREATE TABLE IF NOT EXISTS `books` (
-  `u_id` int(11) DEFAULT NULL,
+  `u_id` varchar(25) DEFAULT NULL,
   `r_id` int(11) DEFAULT NULL,
   `qnty` int(11) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `books` (
 
 
 CREATE TABLE IF NOT EXISTS `owner` (
-  `u_id` int(11) NOT NULL,
+  `u_id` varchar(25) NOT NULL,
   `r_id` int(11) NOT NULL,
   PRIMARY KEY (`u_id`,`r_id`),
   FOREIGN KEY (`u_id`) REFERENCES user(`id`),
