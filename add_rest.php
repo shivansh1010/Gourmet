@@ -13,5 +13,6 @@
 
     mysqli_query($link,"INSERT into serves VALUES('$r_id',2,3,200,10)");
   }
+  mysqli_close($link);
   echo "completed";
  ?>
