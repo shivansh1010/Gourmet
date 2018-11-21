@@ -7,8 +7,8 @@ SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_t
 
 -->SEARCH RESTRAUNT OPEN AT CURRENT TIME
 
-SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE a.id AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time 
- 
+SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE a.id AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time
+
 -->SEARCH FOOD SORT BY PRICE
 
 SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.price ;
@@ -31,7 +31,7 @@ INSERT INTO `restaurant`( `name`, `address`, `mobile_no`, `star`, `city`, `open_
 
 	-->INSERT FOOD(INDIVISUAL)
 	------------->LATER<---------------
-
-		
-
-
+-->ASSERTION FOR VEG RESTARAUNT
+  CREATE ASSERTION veg_check CHECK (NOT EXISTS (SELECT * FROM restaurant a,serves b , food c where a.id=b.r_id AND a.veg_nonveg="veg" AND c.type="nonveg"));
+  -->ISSUES EXISTS
+  
