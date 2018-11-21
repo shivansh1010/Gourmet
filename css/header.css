@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(50, 50, 50);
+}
+.header {
+    position : static;
+    background: #555;
+    height: 100%;
+    width : 100%;
+}
+.header_top {
+    background-image: url("../images/header_bg.png");
+    background-size: 100%;
+    position:absolute;
+    top:0px;
+    background-repeat : no-repeat;
+    height : 500px;
+    width:100%;
+    z-index : 9;
+
+}
+.header_top .right_buttons{
+    position: absolute;
+    top: 50px;
+    left:65%;
+    text-align: right;
+}
+.header_top .left_buttons{
+    position: absolute;
+    top: 50px;
+    left:30%;
+    text-align: left;
+}
+.gourmet_logo {
+    background-image: url("../images/gourmet_logo.png");
+    background-repeat : no-repeat;
+    background-size : contain;
+    width : 300px;
+    height: 300px;
+    position: absolute;
+    top : 80px;
+    left: 39% ;
+    z-index:10;
+}
+
+.disc_one {
+    width:50%;
+    background-color:#08f;
+    position:absolute;
+    left:0%;
+    top : 0px;
+    height : 100%;
+
+}
+.disc_two {
+    width:50%;
+    background-color:#f80;
+    position:absolute;
+    left:50%;
+    top : 0px;
+    height : 100%;
+
+}
