@@ -1,0 +1,37 @@
+-->SEARCH RESTRAUNT BY IN CITY WITH GIVEN PREFERENCE AND SORT BY DISCOUNT
+SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE a.veg_nonveg="veg" AND a.city="jabalpur" AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY discount DESC;
+
+-->SEARCH RESTRAUNT BY IN CITY WITH GIVEN PREFERENCE AND SORT BY STAR
+
+SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE a.veg_nonveg="veg" AND a.city="jabalpur" AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;
+
+-->SEARCH RESTRAUNT OPEN AT CURRENT TIME
+
+SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE a.id AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time 
+ 
+-->SEARCH FOOD SORT BY PRICE
+
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.price ;
+
+-->SEARCH FOOD SORT BY RATING
+
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.STAR;
+
+-->SEARCH FOOD SORT BY RATING
+
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.discount;
+
+-->CREATE USER
+
+INSERT INTO `user`(`id`, `pswd`, `city`, `mobile_no`) VALUES ('oola','123','jabalpur',1234567891)
+
+-->CREATE RESTARAUNT
+
+INSERT INTO `restaurant`( `name`, `address`, `mobile_no`, `star`, `city`, `open_time`, `close_time`, `veg_nonveg`) VALUES ('chawalas','russe','4567891231','3','jabalpur','11:00:00','22:00:00','both');
+
+	-->INSERT FOOD(INDIVISUAL)
+	------------->LATER<---------------
+
+		
+
+
