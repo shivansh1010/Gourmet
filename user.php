@@ -18,5 +18,6 @@
     echo $_SESSION['u_mobno'].'<br>';
 
   ?>
+  <a href="./addrestform.php">Add restaurant</a>
 </body>
 </html>
