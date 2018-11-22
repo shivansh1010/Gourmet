@@ -1,5 +1,6 @@
 <?php
- ?>
+
+?>
 
  <html>
     <head>
@@ -23,7 +24,7 @@
             <form class="search" name="search" action="search.php" method="get">
                 <select name="search_type">
                     <option value="food">FOOD</option>
-                    <option value="rest">RESTAURANT</option>
+                    <option value="restaurant">RESTAURANT</option>
                 </select>
                 <input type="search" placeholder="  TYPE" name="keyword" required>
                 <button type="submit">SEARCH</button>
