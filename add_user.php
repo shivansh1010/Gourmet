@@ -29,11 +29,11 @@
             
         }
         
-        //header('Location: '.'index.php');            
+        header('Location: '.'index.php');            
         
     }
     catch(Exception $e){
-        print('Something, somewhere is wrong'.mysqli_error($link));
+        print('Something, Somewhere, Somehow went wrong'.mysqli_error($link));
     }
 
 ?>
