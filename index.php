@@ -1,5 +1,4 @@
 <?php
-
 ?>
 
  <html>
@@ -12,8 +11,8 @@
         <div class="header">
             <div class="header_top" >
                 <div class="left_buttons">
-                    <a href="#" class="header_hover" >CUISINES</a>
-                    <a href="rest_list.php">RESTAURANT</a>
+                    <a href="./food_list.php" class="header_hover" >CUISINES</a>
+                    <a href="./rest_list.php">RESTAURANT</a>
                 </div>
                 <div class="right_buttons">
                     <a href="#login">LOGIN</a>
