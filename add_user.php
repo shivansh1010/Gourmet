@@ -2,7 +2,7 @@
 
     include("PhpMysqlConnectivity.php");
 
-    $name = $_POST['name'];
+    $u_id = $_POST['uname'];
     $pswd = $_POST['pswd'];
     $town = $_POST['town'];
     $mobno = $_POST['mobno'];
@@ -36,4 +36,9 @@
         print('Something, Somewhere, Somehow went wrong'.mysqli_error($link));
     }
 
+    session_start();
+    $_SESSION['u_id'] = $u_id;
+    $_SESSION['u_city'] = $city;
+    $_SESSION['u_mobno'] = $mobno;
+    
 ?>
