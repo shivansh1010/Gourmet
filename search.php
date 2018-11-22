@@ -4,8 +4,8 @@
     $name = $_GET['keyword'];
     include($file);
 
-// ye kya tatti ki hai, search page par aa hi nahi raha, ise comment karne par search chal ra hai
     if($result->num_rows==0){
+        //or any other location
         header('Location: '.'/Gourmet');
     }
 ?>
