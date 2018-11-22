@@ -25,7 +25,7 @@
 
   $r_id = mysqli_fetch_array($res)[0];
 
-  echo $r_id;
+  //echo $r_id;
 
   echo "<form  name='addres_food' action='serve_query.php' method='get'>";
   echo "<input type='hidden' name='len' value='$n' />";

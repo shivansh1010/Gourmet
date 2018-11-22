@@ -21,8 +21,8 @@
 
     $f_id = mysqli_fetch_assoc($res)['id'];
     if(! $f_id){
-      echo "Please Enter Correct Information";
-      header("Location: add_serve.php");
+      echo "Please Enter Correct Information again";
+      include("addrestform.php");
     }
     mysqli_query($link,"INSERT INTO serves VALUES($r_id , $f_id , $star , $price , $dis);");
 
