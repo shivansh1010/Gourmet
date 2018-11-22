@@ -18,7 +18,7 @@
   while($row = mysqli_fetch_array($result))
   { 
     echo '<tr>';
-    echo '<td>'.$row["name"].'</td>';//.$row['star'].$row['type'].$row['price'].$row['city'];
+    echo '<td>'.$row["name"].'</td>'; //.$row['star'].$row['type'].$row['price'].$row['city'];
     echo '<td>'.$row["star"].'</td>';
     echo '<td>'.$row["type"].'</td>';
     echo '<td>'.$row["price"].'</td>';
