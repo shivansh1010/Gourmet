@@ -11,15 +11,15 @@ SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_t
 
 -->SEARCH FOOD SORT BY PRICE
 
-SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.price ;
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND a.name="pig" AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.price ;
 
 -->SEARCH FOOD SORT BY RATING
 
-SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.STAR;
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND a.name="pig" AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.STAR;
 
 -->SEARCH FOOD SORT BY RATING
 
-SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.discount;
+SELECT DISTINCT a.name,c.name,b.star,a.type,b.price,c.city FROM food a, serves b,restaurant c WHERE a.id=b.f_id AND b.r_id=c.id  AND a.name="pig" AND CAST(CURRENT_TIME() AS time) BETWEEN c.open_time AND c.close_time AND a.name="pig" ORDER BY b.discount;
 
 -->CREATE USER
 
@@ -34,4 +34,3 @@ INSERT INTO `restaurant`( `name`, `address`, `mobile_no`, `star`, `city`, `open_
 -->ASSERTION FOR VEG RESTARAUNT
   CREATE ASSERTION veg_check CHECK (NOT EXISTS (SELECT * FROM restaurant a,serves b , food c where a.id=b.r_id AND a.veg_nonveg="veg" AND c.type="nonveg"));
   -->ISSUES EXISTS
-  
