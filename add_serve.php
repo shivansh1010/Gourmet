@@ -27,7 +27,7 @@
 
   echo $r_id;
 
-  echo "<form  name='addres_food' action='localhost/Gourmet/serve_query.php' method='get'>";
+  echo "<form  name='addres_food' action='serve_query.php' method='get'>";
   echo "<input type='hidden' name='len' value='$n' />";
   echo "<input type='hidden' name='r_id' value='$r_id' />";
   for ($i=1; $i <= $n; $i++) {
