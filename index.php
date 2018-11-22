@@ -6,7 +6,7 @@
   <?php
     session_start();
     if (!isset($_GET['res'])) {
-      $_GET['res'] = '200' ;
+      $_GET['res'] = '201' ;
     }
   ?>
 </head>
@@ -20,11 +20,13 @@
       <div class="right_buttons">
         <?php
           if (isset($_SESSION['u_id'])) {
+            echo '<a href="./logout.php">Log Out</a>';
             echo '<a href="./user.php">'.$_SESSION["u_id"].'</a>';
+
           }
           else {
-            echo '<a href="#login">Login</a>';
             echo '<a href="./signup.php">Signup</a>';
+            echo '<a href="#login">Login</a>';
           }
         ?>
       </div>
@@ -40,34 +42,36 @@
     </form>
 
   </div>
-  <div class="headerbg"></div>
 
-  <div class="blurbg"></div>
-  <div class="login" >
-    <a name="login"></a>
-    <h1>Login</h1>
-    <form class="loginform" name = "search" action = "./login.php" method = "post">
       <?php
-        if ($_GET['res'] == '404') {
-          echo '<input type = "text" placeholder = " User Not Found" name = "id" required>';
-        }
-        else{
-          echo '<input type = "text" placeholder = " Name" name = "id" required>';
-        }
+        if (!isset($_SESSION['u_id'])) {
+          echo '<div class="headerbg"></div>';
+          echo '<div class="blurbg"></div>';
+          echo '<div class="login" >';
+          echo '<a name="login"></a>';
+          echo '<h1>Login</h1>';
+          echo '<form class="loginform" name = "search" action = "./login.php" method = "post">';
+          if ($_GET['res'] == '404') {
+            echo '<input type = "text" placeholder = " User Not Found" name = "id" required>';
+          }
+          else{
+            echo '<input type = "text" placeholder = " Name" name = "id" required>';
+          }
 
-        if ($_GET['res'] == '403') {
-          echo '<input type = "password" placeholder = "Password not Match" name = "pswd" required>';
-        }
-        else {
-          echo '<input type = "password" placeholder = "Password" name = "pswd" required>';
+          if ($_GET['res'] == '403') {
+            echo '<input type = "password" placeholder = "Password not Match" name = "pswd" required>';
+          }
+          else {
+            echo '<input type = "password" placeholder = "Password" name = "pswd" required>';
+          }
+          echo '<button type = "submit">Login</button>';
         }
       ?>
-      <button type = "submit">Login</button>
     </form>
   </div>
 
 
-  <div class="second">
+  <!-- <div class="second">
     !!!!!!dfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
     skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
     skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
@@ -82,6 +86,6 @@
     skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
     skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
     skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>skjdskdfkfsff<br>
-  </div>
+  </div> -->
 </body>
 </html>
