@@ -1,4 +1,4 @@
-<<?php
+<?php
 echo "
 <form  name='addres' action='add_serve.php' method='get'>
     <p><br>restaruant name</p>
