@@ -38,8 +38,8 @@
 
         }
         else {
-          echo '<a href="./signup.php">Signup</a>';
-          echo '<a href="#login">Login</a>';
+          echo '<a onclick="document.getElementById(\'first_name\').focus();">Signup</a>';
+          echo '<a href="./index.php#login">Login</a>';
         }
       ?>
     </div>
@@ -58,7 +58,7 @@
         <input value="Submit">-->
 
         <label>
-            <input type="text" name="name" required >
+            <input id="first_name" type="text" name="name" required >
             <div class="label-text">First name</div>
         </label>
         <label>

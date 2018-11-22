@@ -3,6 +3,13 @@
   <title>Gourmet</title>
   <link type="text/css" rel="stylesheet" href="css/header.css" />
   <link type="text/css" rel="stylesheet" href="css/index.css" />
+  <script>
+        $("a.field").click(function() {
+        var target = $(this).attr("href").substring(1);
+        $("#" + target).focus();
+        return false;
+        });
+  </script>
   <?php
     session_start();
     if (!isset($_GET['res'])) {
@@ -26,7 +33,7 @@
           }
           else {
             echo '<a href="./signup.php">Signup</a>';
-            echo '<a href="#login">Login</a>';
+            echo '<a onclick="document.getElementById(\'login_user\').focus();">Login</a>';
           }
         ?>
       </div>
@@ -51,14 +58,14 @@
           echo '<h1>Login</h1>';
           echo '<form class="loginform" name = "search" action = "./login.php" method = "post">';
           if ($_GET['res'] == '404') {
-            echo '<input type = "text" placeholder = " User Not Found" name = "id" required>';
+            echo '<input id="login_user" type = "text" placeholder = " User Not Found" name = "id" required>';
           }
           else{
-            echo '<input type = "text" placeholder = " Name" name = "id" required>';
+            echo '<input id="login_user" type = "text" placeholder = " Username" name = "id" required>';
           }
 
           if ($_GET['res'] == '403') {
-            echo '<input type = "password" placeholder = "Password not Match" name = "pswd" required>';
+            echo '<input type = "password" placeholder = "Password Incorrect" name = "pswd" required>';
           }
           else {
             echo '<input type = "password" placeholder = "Password" name = "pswd" required>';
