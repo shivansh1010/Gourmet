@@ -25,11 +25,11 @@
 </head>
 
 <body>
-	<form action="add_user.php" method="post">
-		name <input type="text" name="name"><br>
-		password <input type="text" name="pswd"><br>
-		Town <input type="text" name="town"><br>
-        mobile no: +91 <input type="text" name="mobno"><br>
+	<form action="/Gourmet/add_user.php" method="post" required >
+		name <input type="text" name="name"required ><br>
+		password <input type="text" name="pswd"required ><br>
+		Town <input type="text" name="town"required ><br>
+        mobile no: +91 <input type="text" name="mobno"required ><br>
         <input type="submit" value="Submit">
 	</form>
 </body>
