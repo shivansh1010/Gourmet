@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <form class="search" name="search" action="logincheck.php" method="get">
+            <form class="search" name="search" action="search.php" method="get">
                 <select name="search_type">
                     <option value="food">FOOD</option>
                     <option value="rest">RESTAURANT</option>
@@ -36,7 +36,7 @@
         <div class="login" >
             <a name="login"></a>
             <h1>LOGIN</h1>
-            <form class="loginform" name="search" action="search.php" method="post">
+            <form class="loginform" name="search" action="logincheck.php" method="post">
                 <input type="text" placeholder="  USERNAME" name="id" required>
                 <input type="password" placeholder="  PASSWORD" name="pwd" required>
                 <button type="submit">LOGIN</button>

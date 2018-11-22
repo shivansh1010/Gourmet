@@ -65,7 +65,7 @@ body {
     position:static;/*
     top : 55%;
     left : 23%;*/
-    width: 800px;
+    width: 840px;
     height: 60px;
     margin: 40px auto;
     background: #444;
@@ -87,7 +87,7 @@ body {
     font-style: normal;
     font-size:20px;
     color: #fff;
-    width: 140px;
+    width: 180px;
     height : 60px;
     padding: 10px 5px;
     float: left;
