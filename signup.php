@@ -26,7 +26,7 @@
 
 <body>
 	<form action="/Gourmet/add_user.php" method="post" required >
-		name <input type="text" name="name"required ><br>
+		username <input type="text" name="uname"required ><br>
 		password <input type="text" name="pswd"required ><br>
 		Town <input type="text" name="town"required ><br>
         mobile no: +91 <input type="text" name="mobno"required ><br>

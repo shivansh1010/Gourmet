@@ -69,3 +69,6 @@ CREATE TABLE IF NOT EXISTS `seats` (
   PRIMARY KEY (`r_id`),
   FOREIGN KEY (`r_id`) REFERENCES restaurant(`id`)
 );
+
+
+ALTER TABLE `user` ADD `name` VARCHAR(20) NULL DEFAULT NULL AFTER `id`; 
