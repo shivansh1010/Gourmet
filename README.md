@@ -21,9 +21,9 @@ A DBMS Project
 - [x] think about what to do
 - [x] Create database
 - [x] Enter some for dev data
-- [ ] find css
-- [ ] Create Front End
-- [ ] Create Back End
+- [x] ~~find~~ create css
+- [ ] Create Front End (45%)
+- [ ] Create Back End (45%)
 - [ ] Enter more data
 - [ ] Create Slide of databse layout
-- [ ] Try to separate back end and front end
+- ~~[ ] Try to separate back end and front end~~
