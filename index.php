@@ -42,10 +42,9 @@
     </form>
 
   </div>
-
+  <div class="headerbg"></div>;
       <?php
         if (!isset($_SESSION['u_id'])) {
-          echo '<div class="headerbg"></div>';
           echo '<div class="blurbg"></div>';
           echo '<div class="login" >';
           echo '<a name="login"></a>';

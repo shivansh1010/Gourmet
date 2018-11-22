@@ -16,6 +16,7 @@ else{
   session_start();
   $_SESSION['u_id'] = $row['id'];
   $_SESSION['u_city'] = $row['city'];
+  $_SESSION['u_mobno'] = $row['mobile_no'];
   $res = 200;
   print_r($_SESSION);
 }
