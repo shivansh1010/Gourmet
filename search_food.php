@@ -10,6 +10,7 @@
     }
     echo "<br>";
     //It Works Printing each value;
+    //pata he be 
   }
 
  ?>
