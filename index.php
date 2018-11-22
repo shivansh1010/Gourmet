@@ -42,7 +42,7 @@
     </form>
 
   </div>
-  <div class="headerbg"></div>;
+  <div class="headerbg"></div>
       <?php
         if (!isset($_SESSION['u_id'])) {
           echo '<div class="blurbg"></div>';
@@ -65,9 +65,9 @@
           }
           echo '<button type = "submit">Login</button>';
         }
+        echo '</form></div>';
       ?>
-    </form>
-  </div>
+
 
 
   <!-- <div class="second">
