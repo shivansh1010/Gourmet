@@ -5,6 +5,8 @@
 <html>
 <head>
 	<title>Sign Up | Gourmet</title>
+    <link type="text/css" rel="stylesheet" href="css/signup.css" />
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
 </head>
 
 <body>

@@ -17,7 +17,7 @@
                 </div>
                 <div class="right_buttons">
                     <a href="#login">LOGIN</a>
-                    <a href="#">SIGNUP</a>
+                    <a href="./signup.php">SIGNUP</a>
                 </div>
             </div>
 
