@@ -28,24 +28,41 @@
   //echo $r_id;
 
   echo "<form  name='addres_food' action='serve_query.php' method='get'>";
+
   echo "<input type='hidden' name='len' value='$n' />";
-  echo "<input type='hidden' name='r_id' value='$r_id' />";
+   echo "<input type='hidden' name='r_id' value='$r_id' />";
+
   for ($i=1; $i <= $n; $i++) {
+
     $nm="name"."$i";
+
     $dis="discount"."$i";
+
     $star="star"."$i";
+
     $price="price"."$i";
+
     echo "<h2>details for dish "."$i</h2>";
+
     echo "<p><br>food name</p>
+
     <input type='text' name=$nm required>
+
     <p><br>rating</p>
+
     <input type='text' name=$star required>
+
     <p><br>Price</p>
+
     <input type='text' name=$price required>
+
     <p><br>Discount</p>
+
     <input type='text' name=$dis required>";
   }
+
   echo "<input type='submit'>";
+
   echo "</form>";
 
  ?>
