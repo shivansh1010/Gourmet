@@ -70,12 +70,22 @@ body {
     width: 840px;
     height: 60px;
     margin: 0px auto;
-    background: #444;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, .35);
     /*border-radius: 3px;*/
     border: 2px solid #fff;
+    z-index:1;
 	box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.8);
   	transition: box-shadow 0.15s ease-in-out;
+}
+.search_back{
+    z-index:0;
+    width: 840px;
+    height: 64px;
+    margin: 0px auto;
+    background-image: url("../images/header/1b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed, scroll;
 }
 .search:hover{
 	box-shadow: 0px 15px 50px 5px rgba(0, 0, 0, 0.8);
@@ -95,7 +105,7 @@ body {
     float: left;
     color: #fff;
     border: 0;
-    background: rgba(30, 25, 20, 0.6);
+    background: none;
     border-right: 2px solid #fff;
   	transition: background 0.15s ease-in-out;
     /*border-radius: 3px 0 0 3px;*/
@@ -133,7 +143,7 @@ body {
     float: left;
     color: #fff;
     border: 0;
-    background: rgba(30, 25, 20, 0.6);
+    background: none;
   	transition: background 0.15s ease-in-out;
     /*border-radius: 3px 0 0 3px;*/
 }
@@ -164,7 +174,7 @@ body {
     height: 60px;
     width: 120px;
     color: #fff;
-    background: rgba(30, 25, 20, 0.6);
+    background: none;
     border-left: 2px solid #fff;
   	transition: background 0.2s ease-in-out;
     /*border-radius: 0 3px 3px 0;*/

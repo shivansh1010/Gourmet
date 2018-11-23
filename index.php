@@ -37,8 +37,10 @@
           }
         ?>
       </div>
-    </div>
+  </div>
 
+  <center>
+    <div class="search_back">
     <form class="search" name="search" action="search.php" method="get">
       <select name="search_type">
         <option value="food">Food</option>
@@ -47,6 +49,8 @@
       <input type="search" placeholder=" Search here" name="keyword" required>
       <button type="submit">Search</button>
     </form>
+    </div>
+</center>
 
   </div>
   <div class="headerbg"></div>

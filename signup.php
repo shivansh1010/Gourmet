@@ -73,7 +73,7 @@
             <input type="text" name="mobno" required >
             <div class="label-text">Mobile Number</div>
         </label>
-        <button type="submit">Submit</button><br>&nbsp;
+        <button type="submit">Sign Up</button><br>&nbsp;
 
     </form>
 </center>
