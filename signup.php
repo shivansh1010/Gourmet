@@ -22,27 +22,16 @@
 <div class="headerbg"></div>
 <center>
     <form class="formx" action="/Gourmet/add_user.php" method="post" required >
-        <!--
-        <table border='1px'>
-            <tr><td>Name : </td><td></td></tr>
-            <tr><td>Password : </td><td></td></tr>
-            <tr><td>Town </td><td><input type="text" name="town"required ></td></tr>
-            <tr><td>mobile no: +91</td><td> </td></tr>
-        </table>
-        <input value="Submit">-->
-
         <label>
             <input id="full_name" type="text" name="name" required >
             <div class="label-text">Full Name</div>
         </label>
         <label>
             <input id="id" type="text" name="uname" required >
+            <div class="label-text">User Id</div>
             <?php 
                 if (isset($_GET['user_found'])) {
-                    echo '<div class="label-text">User Id Exist, Try Diffrent</div>';
-                }
-                else{
-                    echo '<div class="label-text">User Id</div>';
+                    echo '<div>User Id Exist, Try Diffrent</div>';
                 }
             ?>
         </label>
@@ -57,12 +46,10 @@
         <label>
             <span class="input-group-addon">+91</span>
             <input type="text" name="mobno" required >
+            <div class="label-text">Mobile Number</div>
             <?php 
                 if(isset($_GET['invalid_no'])){
-                    echo '<div class="label-text">Invalid Number or Number Exist</div>' ;
-                }
-                else {
-                   echo '<div class="label-text">Mobile Number</div>' ;
+                    echo '<div>Invalid Number or Number Exist</div>' ;
                 }
             ?>
         </label>
