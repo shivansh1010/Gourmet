@@ -1,19 +1,3 @@
-<?php
-    /*if( $_GET && $_GET['user_found'] && $_GET['user_found']==true){
-    }
-    if($_GET && $_GET['invalid_no']==true){
-    }*/
-
-    /*foreach ($_GET as $key => $value) {
-        if ($key == 'user_found' && $value) {
-            echo "<h1>User Exists</h1>";
-        }
-    	if ($key == 'invalid_no' && $value) {
-            echo "<h1>Enter Valid Mobile No </h1>";
-    	}
-    }*/
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
