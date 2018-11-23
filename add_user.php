@@ -2,15 +2,17 @@
 
     include("PhpMysqlConnectivity.php");
 
-    $u_id = $_POST['uname'];
+    $id = $_POST['uname'];
+    $name = $_POST['name'];
     $pswd = $_POST['pswd'];
     $town = $_POST['town'];
     $mobno = $_POST['mobno'];
     
+    print_r($_POST);
     echo "bas bhai";
     try{
 
-        $q = "INSERT INTO `user`(`id`, `pswd`, `city`, `mobile_no`) VALUES ('$name','$pswd','$town','$mobno')";
+        $q = "INSERT INTO `user`(`id`,`name`, `pswd`, `city`, `mobile_no`) VALUES ('$id','$name','$pswd','$town','$mobno')";
         
         $result = mysqli_query($link,$q);
         
@@ -20,25 +22,24 @@
             $error = mysqli_error($link);
             print($error);
 
-            if(strpos($error,"Duplicate")>=0){
-               header('Location: '.'signup.php/?user_found=true');
-            }
             if(strpos($error,"'mobile_no'")>0){
-               header('Location: '.'signup.php/?invalid_no=true');    
+               header('Location: '.'signup.php?invalid_no=true');    
             }
-            
+            else if(strpos($error,"Duplicate")>=0){
+               header('Location: '.'signup.php?user_found=true');
+            }
+        }else{
+            session_start();
+            $_SESSION['u_id'] = $id;
+            $_SESSION['u_city'] = $town;
+            $_SESSION['u_mobno'] = $mobno;
+            header('Location: '.'index.php');            
         }
-        
-        header('Location: '.'index.php');            
         
     }
     catch(Exception $e){
         print('Something, Somewhere, Somehow went wrong'.mysqli_error($link));
     }
 
-    session_start();
-    $_SESSION['u_id'] = $u_id;
-    $_SESSION['u_city'] = $city;
-    $_SESSION['u_mobno'] = $mobno;
     
 ?>

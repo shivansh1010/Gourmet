@@ -4,16 +4,14 @@
     if($_GET && $_GET['invalid_no']==true){
     }*/
 
-    foreach ($_GET as $key => $value) {
+    /*foreach ($_GET as $key => $value) {
         if ($key == 'user_found' && $value) {
             echo "<h1>User Exists</h1>";
         }
     	if ($key == 'invalid_no' && $value) {
             echo "<h1>Enter Valid Mobile No </h1>";
     	}
-    }
-
-
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -31,17 +29,9 @@
       <a href="./rest_list.php">Restaurant</a>
     </div>
     <div class="right_buttons">
-      <?php
-        if (isset($_SESSION['u_id'])) {
-          echo '<a href="./logout.php">Log Out</a>';
-          echo '<a href="./user.php">'.$_SESSION["u_id"].'</a>';
-
-        }
-        else {
-          echo '<a onclick="document.getElementById(\'first_name\').focus();">Signup</a>';
-          echo '<a href="./index.php#login">Login</a>';
-        }
-      ?>
+        <?php
+          include('login_buttons.php');
+        ?>
     </div>
   </div>
 </div>
@@ -58,8 +48,19 @@
         <input value="Submit">-->
 
         <label>
-            <input id="first_name" type="text" name="name" required >
-            <div class="label-text">First name</div>
+            <input id="full_name" type="text" name="name" required >
+            <div class="label-text">Full Name</div>
+        </label>
+        <label>
+            <input id="id" type="text" name="uname" required >
+            <?php 
+                if (isset($_GET['user_found'])) {
+                    echo '<div class="label-text">User Id Exist, Try Diffrent</div>';
+                }
+                else{
+                    echo '<div class="label-text">User Id</div>';
+                }
+            ?>
         </label>
         <label>
             <input type="password" name="pswd" required >
@@ -70,8 +71,16 @@
             <div class="label-text">Town</div>
         </label>
         <label>
+            <span class="input-group-addon">+91</span>
             <input type="text" name="mobno" required >
-            <div class="label-text">Mobile Number</div>
+            <?php 
+                if(isset($_GET['invalid_no'])){
+                    echo '<div class="label-text">Invalid Number or Number Exist</div>' ;
+                }
+                else {
+                   echo '<div class="label-text">Mobile Number</div>' ;
+                }
+            ?>
         </label>
         <button type="submit">Sign Up</button><br>&nbsp;
 
