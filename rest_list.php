@@ -21,11 +21,13 @@
       </div>
     </div>
     <div class="headerbg"></div>
-<div class="bodyx">
+    <center>
+<div class="bodyxbg">
+    <div class="bodyx">
 <?php
     include("PhpMysqlConnectivity.php");
     $result=mysqli_query($link,"SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
-    echo '<table>';
+    echo '<table border=1px>';
     echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
     while($row = mysqli_fetch_array($result))
     {
@@ -43,5 +45,7 @@
     echo '</table>';
 ?>
 </div>
+</div>
+</center>
  </body>
  </html>

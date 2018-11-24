@@ -29,7 +29,7 @@
         <label>
             <input id="id" type="text" name="uname" required >
             <div class="label-text">User Id</div>
-            <?php 
+            <?php
                 if (isset($_GET['user_found'])) {
                     echo '<div>User Id Exist, Try Diffrent</div>';
                 }
@@ -44,19 +44,22 @@
             <div class="label-text">Town</div>
         </label>
         <label>
+			<div>
             <span class="input-group-addon">+91</span>
-            <input type="text" name="mobno" required >
-            <div class="label-text">Mobile Number</div>
-            <?php 
+            <input type="text" name="mobno" class="mobno" required>
+            <div class="label-text">&nbsp;&nbsp;&nbsp;&nbsp;Mobile Number</div>
+            <?php
                 if(isset($_GET['invalid_no'])){
                     echo '<div>Invalid Number or Number Exist</div>' ;
                 }
             ?>
+		</div>
         </label>
         <button type="submit">Sign Up</button><br>&nbsp;
 
     </form>
 </center>
+&nbsp;
 </body>
 
 </html>

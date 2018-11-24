@@ -19,7 +19,7 @@ body {
     background-attachment: fixed, scroll;
     top: 0;
     z-index: -1;
-    position : absolute;
+    position : fixed;
     height: 100%;
     width: 100%;
 }
@@ -131,7 +131,7 @@ label {
 }
 label .label-text {
   text-shadow:  0px 0px 7px  rgba(0, 0, 0, 1);
-  color: #9B9B9B;
+  color: #ccc;
   cursor: text;
   font-size: 20px;
   line-height: 20px;
@@ -192,4 +192,18 @@ button:hover, button:focus {
   background-color: white;
   color: #222;
   outline: 0;
+}
+
+.input-group-addon {
+    font-size: 30px;
+    padding: 5px 0px 7px 5px;
+    border-bottom: 2px solid white;
+    text-shadow:  0px 0px 7px  rgba(0, 0, 0, 1);
+    color: white;
+}
+
+.mobno:focus {
+    text-align:left;
+    max-width: 100%;
+    width: 220px;
 }
