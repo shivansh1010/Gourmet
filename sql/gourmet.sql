@@ -70,5 +70,6 @@ CREATE TABLE IF NOT EXISTS `seats` (
   FOREIGN KEY (`r_id`) REFERENCES restaurant(`id`)
 );
 
-
+-- RUN THIS TWO LINES 
 ALTER TABLE `user` ADD `name` VARCHAR(20) NULL DEFAULT NULL AFTER `id`; 
+ALTER TABLE `books` ADD `duration` TIME NOT NULL AFTER `time`; 

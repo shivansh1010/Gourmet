@@ -24,6 +24,7 @@ A DBMS Project
 - [x] ~~find~~ create css
 - [ ] Create Front End (45%)
 - [ ] Create Back End (45%)
+- [ ] add login and signup warning CSS
 - [ ] Enter more data
 - [ ] Create Slide of databse layout
 - ~~[ ] Try to separate back end and front end~~
