@@ -24,18 +24,18 @@
       echo '</tr>';
     echo '</table>';
     $r_id = $row["id"];
-    $result = mysqli_query($link,"SELECT f.name, s.price, s.star FROM serves s,food f WHERE s.r_id=$r_id AND f.id=s.f_id;");
-
+    $result1 = mysqli_query($link,"SELECT f.name, s.price, s.star FROM serves s,food f WHERE s.r_id=$r_id AND f.id=s.f_id;");
+    
 
     echo '<br><table><th>Food Name</th><th>Price</th><th>star</th>';
-    while($row = mysqli_fetch_assoc($result))
+    while($row1 = mysqli_fetch_assoc($result1))
     {
 
       echo '<tr>';
-      foreach ($row as $value) {
+      foreach ($row1 as $value1) {
 
 
-        echo '<td>'.$value.'</td>';
+        echo '<td>'.$value1.'</td>';
       }echo '</tr>';
     }
     echo '</table>';
