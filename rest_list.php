@@ -39,11 +39,14 @@
             echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
             echo '</tr><tr>';
             echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-            
+
             if (isset($_SESSION['u_id'])) {
               echo '<td rowspan=2 ><a href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
             }
-            
+            else {
+                echo '<td rowspan=2 ><a class="errorm">Please Login First</a></td>';
+            }
+
             echo '</tr><tr>';
             echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["mobile_no"].'</td>';
             echo '</tr>';

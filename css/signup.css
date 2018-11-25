@@ -213,3 +213,9 @@ button:hover, button:focus {
     max-width: 100%;
     width: 220px;
 }
+
+.error{
+    color:rgba(210, 30, 40, 1);
+    text-shadow:  0px 0px 7px rgba(210, 30, 40, 1);
+
+}
