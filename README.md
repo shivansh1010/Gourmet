@@ -47,8 +47,8 @@ A DBMS Project
 - [ ] Link `view restaurants` to search results
 - [ ] In add, serve form, mention if discount is price or %
     - [ ] add constraint that `discount<price` or `0%<=discount<100%`
-- [ ] Repeated error, on line28 of restaurant.php ``` Warning: Invalid argument supplied for foreach() in C:\wamp64\www\Gourmet\restaurant.php on line 28```
-    - restaurant are not being added
+- [ ] ~~Repeated error, on line28 of restaurant.php ``` Warning: Invalid argument supplied for foreach() in C:\wamp64\www\Gourmet\restaurant.php on line 28```~~
+- [ ] same naam ke kai restaurant add ho rahe hain
 
 ### **GUI**
 
