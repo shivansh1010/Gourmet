@@ -41,7 +41,10 @@
     $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,s.star,f.type,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
   }
 
-  echo '<table>';
+
+
+
+  echo '<table style="color:white;">';
   echo '<th>Name</th><th>Star</th><th>Type</th><th>Price</th><th>City</th>';
   while($row = mysqli_fetch_array($result))
   {
