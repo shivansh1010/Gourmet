@@ -22,34 +22,40 @@ A DBMS Project
 - [x] Create database
 - [x] Enter some for dev data
 - [x] ~~find~~ create css
-- [x] Create Front End (45%)
-- [x] Create Back End (45%)
+- [ ] Create Front End (45%)
+- [ ] Create Back End (85%)
 - [x] add login and signup warning CSS
 - [x] Enter more data
 - [ ] Create Slide of databse layout
-- [ ] **GUI** modify time in `rest_list.php`, convert to AM/PM
-- [ ] **GUI** modify price in cuisines
-- [ ] In add_rest, modify fields
-    - [ ] rating is still integer
-    - [ ] insert time in proper form
+
+- [ ] create back end for Delete item
+- [ ] Add back for end food item 
+- [x] In add_rest, modify fields
+    - [x] rating is still integer (motta)
+    - [x] insert time in proper form
 - [ ] In serve_query, redirect to somewhere
-    - [ ] also display, if creation of restaurant was a success
-    - [ ] ** add constraints**, like limit time between 00:00 to 24:00
+    - [x] ~~also display, if creation of restaurant was a success~~ redirect to restro page
+    - [ ] ** add constraints**, ~~like limit time between 00:00 to 24:00~~ time limit to restro open and close time
+
 - [ ] In booking.php, add restaurant details in frontend
     - [ ] also display, total number of seats available,
-    - [ ] create constraint, id user enters more number of seats than available
-    - [ ] return some number, jo user physically restaurant ko dikhayega.
+    - ~~[ ] create constraint, id user enters more number of seats than available~~
+    - [ ] return some number, jo user physically restaurant ko dikhayega. **GUI**
+- [ ] **GUI** modify price in cuisines
+- [ ] **GUI** modify time input remove AM/PM add 24 hours format
 - [ ] In user.php, add a link to see all of his booking status
 - [ ] Link `view restaurants` to search results
 
-** gui **
+### **GUI**
 
 - [ ] Create search page
     - [ ] create search food
     - [ ] create search restaurant
-- [ ] Add home button on all pages
+- [ ] Add home button on all pages user login/logout buttons
+- [ ] Create css for user and restro page
+- [ ] Create css for other pages
 
-** if time remains**
+### **if time remains**
 - [ ] add sort by option in `rest_list` and `food_list`
 
 
