@@ -22,30 +22,37 @@
     </div>
     <div class="headerbg"></div>
     <center>
-<div class="bodyxbg">
-    <div class="bodyx">
-<?php
-    include("PhpMysqlConnectivity.php");
-    $result=mysqli_query($link,"SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
-    echo '<table border=1px>';
-    echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
-    while($row = mysqli_fetch_array($result))
-    {
-        echo '<tr>';
-        echo '<td>'.$row["name"].'</td>';
-        echo '<td>'.$row["address"].'</td>';
-        echo '<td>'.$row["mobile_no"].'</td>';
-        echo '<td>'.$row["star"].'</td>';
-        echo '<td>'.$row["city"].'</td>';
-        echo '<td>'.$row["veg_nonveg"].'</td>';
-        echo '<td>'.$row["open_time"].'</td>';
-        echo '<td>'.$row["close_time"].'</td>';
-        echo '</tr>';
-    }
-    echo '</table>';
-?>
-</div>
-</div>
+        <div class="bodyhead">
+        </div>
+    <?php
+        include("PhpMysqlConnectivity.php");
+        $result=mysqli_query($link,"SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
+        //echo '<table border=1px>';
+        //echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
+        while($row = mysqli_fetch_array($result))
+        {
+            echo '<div class="bodytrbg"><div style="background:rgba(70,70,70,0.8);border-radius: 5px;">';
+            echo '<table border=0 cellpadding=2>';
+            echo '<tr>';
+            echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
+            $piclen = 40*$row["star"];
+            echo '<td class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
+            echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
+            echo '</tr><tr>';
+            echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
+            echo '<td rowspan=2 ><a >Book Table</a></td>';
+            echo '</tr><tr>';
+            echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["mobile_no"].'</td>';
+            echo '</tr>';
+
+            echo '</table>';
+            echo '</div></div>';
+            //echo '<br><br>';
+
+        }
+        //echo '</table>';
+    ?>
+<br><br>
 </center>
  </body>
  </html>

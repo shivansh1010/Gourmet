@@ -19,7 +19,7 @@ body {
     background-attachment: fixed, scroll;
     top: 0;
     z-index: -1;
-    position : absolute;
+    position : fixed;
     height: 100%;
     width: 100%;
 }
@@ -101,25 +101,106 @@ body {
 
 /*---------------------------------------------------------------------------*/
 
-.bodyxbg{
-    background-image: none;
+.bodytrbg{
+    border-radius: 5px;
+    background-image: url("../images/header/1b.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed, scroll;
+    text-shadow:  0px 2px 5px  rgba(0, 0, 0, 1);
     height:auto;
-    width:90%;
-    margin-top: 5%;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.8);
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    width:70%;
+    margin-top: 1.5%;
+	box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease-in-out;
 }
-.bodyxbg:hover{
-    background-image: url("../images/header/1b.jpg");
-	box-shadow: 0px 15px 50px 5px rgba(0, 0, 0, 0.8);
+.bodytrbg:hover{
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.8);
+    width:75%;
 }
-.bodyxbg:active{
-	box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.8);
+.bodytrbg table{
+    width:100%;
 }
-.bodyx{
-    background:rgba(255,255,255,0.3);
+
+/* ---------------------------------------------------------------*/
+.bodytrbg a {
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(0, 0, 0, .2);
+    /*border-radius: 3px;*/
+    border: 2px solid #fff;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 8px;
+    height: 25px;
+    width: 200px;
+    color: #fff;
+    background: rgba(30, 25, 20, 0.6);
+    border: 2px solid #fff;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    /*border-radius: 0 3px 3px 0;*/
+}
+.bodytrbg a:hover {
+    background: #fff;
+    color: #444;
+}
+
+.bodytrbg a:active {
+    box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+}
+
+.bodytrbg a:focus {
+    outline: 0;
+}
+/* ---------------------------------------------------------------*/
+
+.bodytrbg .field{
+   text-align: left;
+   vertical-align: middle;
+   font-family: "Roboto", sans-serif;
+   text-transform: capitalize;
+   font-style: normal;
+   position: relative;
+   /*border: 0;*/
+   color: #fff;
+}
+.bodytrbg .name{
+   font-size: 25px;
+   text-transform: uppercase;
+   position: relative;
+   float: left;
+   padding: 8px;
+   height: 25px;
+}
+.bodytrbg .open{
+   text-transform: uppercase;
+   text-align: center;
+   vertical-align:middle;
+   float: right;
+   padding: 8px;
+   height: 25px;
+   width: 200px;
+}
+.bodytrbg .address{
+    width: 100%;
+}
+
+.bodytrbg .starttd{
+}
+
+.bodytrbg .star{
+    float:right;
+    margin:0;
+    height:40px;
+    padding:0px;
+    background-image:url('../images/star.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bodytrbg .veg{
 }
