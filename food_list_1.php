@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Restaurants | Gaurmet</title>
-    <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
+    <link type="text/css" rel="stylesheet" href="css/food_list.css" />
 </head>
 <body>
 
@@ -30,18 +30,18 @@
         //echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
         while($row = mysqli_fetch_array($result))
         {
-            echo '<div class="bodytrbg"><div style="background:rgba(70,70,70,0.8);border-radius: 5px;">';
+            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["type"].')</td>';
             $piclen = 40*$row["avg_r"];
-            echo '<td class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
+            echo '<td rowspan=2 class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
             //echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
             //echo '</tr><tr>';
             //echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-            echo '<td rowspan=2 ><a >Book Table</a></td>';
+            echo '<td rowspan=2 width="230px" ><a >View Restaurants</a></td>';
             echo '</tr><tr>';
-            echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["avg_p"].'</td>';
+            echo '<td class="field mobile">&nbsp;&nbsp;₹&nbsp;'.$row["avg_p"].'</td>';
             echo '</tr>';
 
             echo '</table>';
