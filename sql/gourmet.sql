@@ -73,3 +73,8 @@ CREATE TABLE IF NOT EXISTS `seats` (
 -- RUN THIS TWO LINES 
 ALTER TABLE `user` ADD `name` VARCHAR(20) NULL DEFAULT NULL AFTER `id`; 
 ALTER TABLE `books` ADD `duration` TIME NOT NULL AFTER `time`; 
+ALTER TABLE `books` CHANGE `time` `time` TIME NULL DEFAULT NULL; 
+ALTER TABLE `books` CHANGE `u_id` `u_id` VARCHAR(25) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL; 
+ALTER TABLE `books` CHANGE `r_id` `r_id` INT(11) NOT NULL; 
+ALTER TABLE `books` CHANGE `qnty` `qnty` INT(11) NOT NULL; 
+ALTER TABLE `books` CHANGE `time` `time` TIME NOT NULL; 
