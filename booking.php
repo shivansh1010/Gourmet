@@ -11,32 +11,39 @@
 
         $u_id = $_SESSION['u_id'];
         $u_name = $_SESSION['u_name'];
-        if (!isset($_GET['r_id'])) {
-            header('Location: '.'./#search');
-        }
-        $r_id = $_GET['r_id'];
-        $r_name = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
-        
 
-        //FIND AVALABLE SEATS FROM BOOKS
-        //$avlbl_seats = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
+        print_r($_POST);
+        $r_id = $_POST['r_id'];
+        if(!$r_id){
+            $r_id = 5;
+        }
+        $r_name = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
     ?>
 </head>
 <body>
-    <form action='book_seat.php' method="post">
-        <?php 
-            echo '<div> Restaurant :-'.$r_name.'</div>';
-            echo '<div> User :- '.$u_name.'</div>';
-        ?>
-         Time <input type="time" value="time">
-         <input type="submit" value="Check" onclick="check()">
-         <?php
-            if (isset($_GET['s_no'])) {
-                echo '<div>'.$_GET['s_no'].' seats are avalable</div>';
+    <?php 
+        echo '<div> Restaurant :-'.$r_name.'</div>';
+        echo '<div> User :- '.$u_name.'</div>';
+    ?>
+    <form action='./book_seat.php' method="POST">
+         
+    <?php  
+            echo '<input type = "hidden" name = "r_id" value = '.$r_id.'>';
+            
+            if (isset($_POST['res']) && $_POST['res']) {       
+                echo 'Number of seats <input type="number" name="no" min=1 value='.$_POST['no'].' readonly ><br>';
+                echo 'Time <input type="time" name="start_time" value='.$_POST['st'].' readonly >';
+                echo '<input type="time" name="end_time" value='.$_POST['et'].' readonly ><br>';
+                echo 'Seat Avalable Book Now !!';
+                echo '<input type="submit" value="Book" name="book">';
+            } 
+            else{
+                echo 'Number of seats <input type="number" name="no" min=1 required ><br>';
+                echo 'Time <input type="time" name="start_time" required>';
+                echo '<input type="time" name="end_time" required><br>';
+                echo '<input type="submit" value="Check" name="check">';
             }
-         ?>
-         <div> Number of seats <input type="number" require></div>
-         <input type="submit" value="Book" onclick="book()">
+        ?>
     </form>
 </body>
 </html>
