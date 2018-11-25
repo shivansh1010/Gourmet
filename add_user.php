@@ -31,6 +31,7 @@
         }else{
             session_start();
             $_SESSION['u_id'] = $id;
+            $_SESSION['u_name'] = $name;
             $_SESSION['u_city'] = $town;
             $_SESSION['u_mobno'] = $mobno;
             header('Location: '.'index.php');

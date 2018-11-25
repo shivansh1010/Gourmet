@@ -37,7 +37,7 @@
 		$end_time = $_POST['end_time'];
 		$r_id = $_POST['r_id'];
 		
-		$q = "SELECT SUM(`qnty`) FROM books WHERE r_id = $r_id AND start_time BETWEEN CAST('$start_time' AS TIME) AND CAST('$end_time' as TIME) OR end_time BETWEEN CAST('$start_time' AS TIME) AND CAST('$end_time' as TIME) ";
+		$q = "SELECT SUM(`qnty`) FROM books WHERE r_id = $r_id AND date = CURDATE() AND start_time BETWEEN CAST('$start_time' AS TIME) AND CAST('$end_time' as TIME) OR end_time BETWEEN CAST('$start_time' AS TIME) AND CAST('$end_time' as TIME) ";
 		$r = mysqli_query($link,$q);        
 		$r = mysqli_fetch_array($r);
 		$r[0] += 0;
