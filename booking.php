@@ -23,7 +23,6 @@
             header('Location: '.'./#search');
         }
 
-
         $r_name = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
     ?>
 </head>
