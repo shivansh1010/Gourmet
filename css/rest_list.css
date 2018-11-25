@@ -204,3 +204,8 @@ body {
 }
 .bodytrbg .veg{
 }
+
+.errorm:hover{
+  background-color: rgba(30, 25, 20, 0.6);
+  color: white;
+}
