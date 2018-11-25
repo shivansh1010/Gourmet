@@ -36,7 +36,6 @@
             $_SESSION['u_mobno'] = $mobno;
             header('Location: '.'index.php');
         }
-
     }
     catch(Exception $e){
         print('Something, Somewhere, Somehow went wrong'.mysqli_error($link));

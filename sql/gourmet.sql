@@ -82,3 +82,13 @@ ALTER TABLE `books` CHANGE `u_id` `u_id` VARCHAR(25) CHARACTER SET latin1 COLLAT
 ALTER TABLE `books` CHANGE `r_id` `r_id` INT(11) NOT NULL; 
 ALTER TABLE `books` CHANGE `qnty` `qnty` INT(11) NOT NULL; 
 ALTER TABLE `books` CHANGE `time` `time` TIME NOT NULL; 
+
+DROP TABLE `books`;
+CREATE TABLE `books` (
+  `u_id` varchar(25) NOT NULL,
+  `r_id` int(11) NOT NULL,
+  `qnty` int(11) NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `date` date DEFAULT NULL
+) 
