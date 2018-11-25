@@ -9,5 +9,5 @@
         echo('cant connect to db'. mysqli_error($link));
     }*/
 
-    print('done');
+    //print('done');
 ?>

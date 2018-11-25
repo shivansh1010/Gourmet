@@ -25,6 +25,7 @@
         <div class="bodyhead">
         </div>
     <?php
+    echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Restaurants Currently Open</h1>";
         include("PhpMysqlConnectivity.php");
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
 
@@ -32,7 +33,7 @@
         {
             $nm=$row["name"];
 
-            echo '<div href=search.php?search_type=restaurant&keyword='.$nm.' class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
+            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
@@ -43,10 +44,10 @@
             echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
 
             if (isset($_SESSION['u_id'])) {
-              echo '<td rowspan=2 ><a href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
+              echo '<td rowspan=2 ><a class="styledanchor" href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
             }
             else {
-                echo '<td rowspan=2 ><a class="errorm">Please Login First</a></td>';
+                echo '<td rowspan=2 ><a class="styledanchor errorm">Please Login First</a></td>';
             }
 
             echo '</tr><tr>';
@@ -54,16 +55,16 @@
             echo '</tr>';
 
             echo '</table>';
-            echo '</div></div>';
+            echo '</a></div></div>';
         }
-        echo "<h1 style='color:white'>Closed Now</h1>";
+        echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) NOT BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
 
         while($row = mysqli_fetch_array($result))
         {
             $nm=$row["name"];
 
-            echo '<div href=search.php?search_type=restaurant&keyword='.$nm.' class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
+            echo '<div href=search.php?search_type=restaurant&keyword='.$nm.' class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
@@ -74,10 +75,10 @@
             echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
 
             if (isset($_SESSION['u_id'])) {
-              echo '<td rowspan=2 ><a href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
+              echo '<td rowspan=2 ><a class="styledanchor"  href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
             }
             else {
-                echo '<td rowspan=2 ><a class="errorm">Please Login First</a></td>';
+                echo '<td rowspan=2 ><a class="styledanchor errorm">Please Login First</a></td>';
             }
 
             echo '</tr><tr>';
@@ -85,7 +86,7 @@
             echo '</tr>';
 
             echo '</table>';
-            echo '</div></div>';
+            echo '</a></div></div>';
         }
     ?>
 <br><br>
