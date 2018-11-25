@@ -36,9 +36,9 @@
             echo $row['name'].' ';
             echo $row['price'].' ';
             echo $row['discount'].' ';
+            $f_id = $row['f_id'];
             if($is_owner){
-                //CREATE POST REQUEST HERE 
-                echo '<a>Delete</a>';
+                echo '<a href="./delete_item.php?r_id='.$r_id.'&f_id='.$f_id.'">Delete</a>';
             }
             echo '<br>';
         }
