@@ -1,0 +1,26 @@
+.restro{
+    margin-bottom: 1%;
+}
+.food{
+    width: 60%;
+    margin:0px;
+}
+.food:hover{
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.8);
+    width:65%;
+}
+.labelhead{
+        /*background-color: rgba(0,0,0,0.5);*/
+        text-shadow: 0px 2px 7px rgba(0,0,0,1);
+        text-align: center;
+        vertical-align: middle;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        width:60%;
+        text-align:left;
+        margin-bottom: 5px;
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+}
