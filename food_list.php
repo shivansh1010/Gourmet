@@ -25,11 +25,13 @@
         </div>
     <?php
         include("PhpMysqlConnectivity.php");
-        $result=mysqli_query($link,"SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE f.id = s.f_id GROUP BY f.id ORDER BY avg_r DESC , avg_p ;");
+        $result=mysqli_query($link,"SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;");
         //echo '<table border=1px>';
         //echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
         while($row = mysqli_fetch_array($result))
         {
+            $nm=$row['name'];
+            //echo "$nm";
             echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
@@ -39,7 +41,7 @@
             //echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
             //echo '</tr><tr>';
             //echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-            echo '<td rowspan=2 width="230px" ><a >View Restaurants</a></td>';
+            echo '<td rowspan=2 width="230px" ><a href="./search.php?keyword='.$nm.'&search_type=food">View Restaurants</a></td>';
             echo '</tr><tr>';
             echo '<td class="field mobile">&nbsp;&nbsp;₹&nbsp;'.$row["avg_p"].'</td>';
             echo '</tr>';
