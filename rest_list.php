@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Restaurants | Gaurmet</title>
+    <title>Restaurants | Gourmet</title>
     <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
 </head>
 <body>
