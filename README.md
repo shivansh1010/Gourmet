@@ -56,8 +56,9 @@ A DBMS Project
     - [ ] create search food
     - [ ] create search restaurant
 - [ ] Add home button on all pages user login/logout buttons
-- [ ] Create css for user and restro page
-- [ ] Create css for other pages
+- [ ] Create css for user ~~and restro page~~
+- [ ] Create css for booking
+- [ ] 
 
 ### **if time remains**
 - [ ] add sort by option in `rest_list` and `food_list`
