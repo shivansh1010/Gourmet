@@ -70,7 +70,11 @@ CREATE TABLE IF NOT EXISTS `seats` (
   FOREIGN KEY (`r_id`) REFERENCES restaurant(`id`)
 );
 
--- RUN THIS TWO LINES 
+-- IMPORTANT
+ALTER TABLE `restaurant` CHANGE `star` `star` DECIMAL(2,1) NOT NULL DEFAULT '0'; 
+ALTER TABLE `serves` CHANGE `star` `star` DECIMAL(2,1) NOT NULL DEFAULT '0'; 
+
+-- RUN THIS LINES 
 ALTER TABLE `user` ADD `name` VARCHAR(20) NULL DEFAULT NULL AFTER `id`; 
 ALTER TABLE `books` ADD `duration` TIME NOT NULL AFTER `time`; 
 ALTER TABLE `books` CHANGE `time` `time` TIME NULL DEFAULT NULL; 
