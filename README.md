@@ -37,7 +37,7 @@ A DBMS Project
     - [ ] ** add constraints**, like limit time between 00:00 to 24:00
 - [ ] In booking.php, add restaurant details in frontend
     - [ ] also display, total number of seats available,
-    - [ ] create constraint, id user enters more number of seats than available
+    - [ ] create constraint, like user shouldnt enter more number of seats than available
     - [ ] return some number, jo user physically restaurant ko dikhayega.
 - [ ] In user.php, add a link to see all of his booking status
 - [ ] Link `view restaurants` to search results
