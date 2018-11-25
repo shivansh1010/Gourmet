@@ -29,4 +29,29 @@ A DBMS Project
 - [ ] Create Slide of databse layout
 - [ ] **GUI** modify time in `rest_list.php`, convert to AM/PM
 - [ ] **GUI** modify price in cuisines
+- [ ] In add_rest, modify fields
+    - [ ] rating is still integer
+    - [ ] insert time in proper form
+- [ ] In serve_query, redirect to somewhere
+    - [ ] also display, if creation of restaurant was a success
+    - [ ] ** add constraints**, like limit time between 00:00 to 24:00
+- [ ] In booking.php, add restaurant details in frontend
+    - [ ] also display, total number of seats available,
+    - [ ] create constraint, id user enters more number of seats than available
+    - [ ] return some number, jo user physically restaurant ko dikhayega.
+- [ ] In user.php, add a link to see all of his booking status
+- [ ] Link `view restaurants` to search results
+
+** gui **
+
+- [ ] Create search page
+    - [ ] create search food
+    - [ ] create search restaurant
+- [ ] Add home button on all pages
+
+** if time remains**
+- [ ] add sort by option in `rest_list` and `food_list`
+
+
+
 - ~~[ ] Try to separate back end and front end~~
