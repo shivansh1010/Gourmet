@@ -30,7 +30,7 @@
 
         while($row = mysqli_fetch_array($result))
         {
-            echo '<div class="bodytrbg"><div style="background:rgba(30,30,30,0.7);border-radius: 5px;">';
+            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
