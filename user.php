@@ -3,11 +3,11 @@
 <head>
 	<title>User | Gourmet</title>
 </head>
-	<?php
-		session_start();
-	?>
 <body>
 	<?php
+	session_start();
+	include('PhpMysqlConnectivity.php');
+
     if ( !isset($_SESSION['u_id'])) {
       header('Location: '.'/Gourmet#login');
     }
@@ -16,8 +16,19 @@
     echo $_SESSION['u_id'].'<br>';
     echo $_SESSION['u_city'].'<br>';
     echo $_SESSION['u_mobno'].'<br>';
+    echo $_SESSION['u_name'].'<br>';
 
+    $id = $_SESSION['u_id'];
+
+	$q = "SELECT r.name, r.id FROM restaurant r, owner o WHERE '$id' = o.u_id AND o.r_id = r.id";
+	print($q);
+    $result = mysqli_query($link,$q);
+
+    while($row = mysqli_fetch_row($result)){
+		echo $row[0].' ';
+		echo '<a href="./restaurant.php?r_id='.$row[1].'">Edit Menu</a><br>'; 
+	}
+	echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
   ?>
-  <a href="./addrestform.php">Add restaurant</a>
 </body>
 </html>
