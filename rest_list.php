@@ -26,9 +26,8 @@
         </div>
     <?php
         include("PhpMysqlConnectivity.php");
-        $result=mysqli_query($link,"SELECT DISTINCT a.name,a.address,a.mobile_no,a.star,a.city,a.veg_nonveg,a.open_time,a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
-        //echo '<table border=1px>';
-        //echo '<th>Name</th><th>Address</th><th>Mobile No</th><th>Star</th><th>City</th><th>Veg/NonVeg</th><th>Open Time</th><th>Close Time</th>';
+        $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
+
         while($row = mysqli_fetch_array($result))
         {
             echo '<div class="bodytrbg"><div style="background:rgba(30,30,30,0.7);border-radius: 5px;">';
@@ -40,17 +39,18 @@
             echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
             echo '</tr><tr>';
             echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-            echo '<td rowspan=2 ><a >Book Table</a></td>';
+            
+            if (isset($_SESSION['u_id'])) {
+              echo '<td rowspan=2 ><a href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
+            }
+            
             echo '</tr><tr>';
             echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["mobile_no"].'</td>';
             echo '</tr>';
 
             echo '</table>';
             echo '</div></div>';
-            //echo '<br><br>';
-
         }
-        //echo '</table>';
     ?>
 <br><br>
 </center>

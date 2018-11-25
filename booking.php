@@ -12,11 +12,18 @@
         $u_id = $_SESSION['u_id'];
         $u_name = $_SESSION['u_name'];
 
-        print_r($_POST);
-        $r_id = $_POST['r_id'];
-        if(!$r_id){
-            $r_id = 5;
+        
+        if(isset($_POST['r_id'])){
+            $r_id = $_POST['r_id'];
         }
+        else if(isset($_GET['r_id'])){
+            $r_id = $_GET['r_id'];
+        }
+        else{
+            header('Location: '.'./#search');
+        }
+
+
         $r_name = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
     ?>
 </head>
@@ -26,7 +33,6 @@
         echo '<div> User :- '.$u_name.'</div>';
     ?>
     <form action='./book_seat.php' method="POST">
-         
     <?php  
             echo '<input type = "hidden" name = "r_id" value = '.$r_id.'>';
             
@@ -38,6 +44,9 @@
                 echo '<input type="submit" value="Book" name="book">';
             } 
             else{
+                if(isset($_POST['res'])){
+                    echo 'Seats are not avalable';
+                }
                 echo 'Number of seats <input type="number" name="no" min=1 required ><br>';
                 echo 'Time <input type="time" name="start_time" required>';
                 echo '<input type="time" name="end_time" required><br>';
