@@ -11,7 +11,6 @@
 
         $u_id = $_SESSION['u_id'];
         $u_name = $_SESSION['u_name'];
-
         
         if(isset($_POST['r_id'])){
             $r_id = $_POST['r_id'];
@@ -42,7 +41,8 @@
     <form action='./book_seat.php' method="POST">
     <?php  
             echo '<input type = "hidden" name = "r_id" value = '.$r_id.'>';
-            
+            echo '<input type = "hidden" name = "r_name" value = '.$r_name.'>';
+           
             if (isset($_POST['res']) && $_POST['res']) {       
                 echo 'Number of seats <input type="number" name="no" min=1 value='.$_POST['no'].' readonly ><br>';
                 echo 'Time <input type="time" name="start_time" value='.$_POST['st'].' readonly >';
