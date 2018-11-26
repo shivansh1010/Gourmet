@@ -54,7 +54,7 @@
                 if(isset($_POST['res'])){
                     echo 'Seats are not avalable';
                 }
-                echo 'Number of seats <input type="number" name="no" min=1 required ><br>';
+                echo 'Number of seats <input type="number" name="no" min=1 max='.$r_seats.' value=1 required ><br>';
                 echo 'Time <input type="time" name="start_time" required>';
                 echo '<input type="time" name="end_time" required><br>';
                 echo '<input type="submit" value="Check" name="check">';
