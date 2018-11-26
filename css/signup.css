@@ -169,15 +169,11 @@ label input:focus {
 label input:focus + .label-text {
   color: #F0F0F0;
   font-size: 13px;
-  -moz-transform: translateY(-74px);
-  -ms-transform: translateY(-74px);
   -webkit-transform: translateY(-74px);
   transform: translateY(-74px);
 }
 label input:valid + .label-text {
   font-size: 13px;
-  -moz-transform: translateY(-74px);
-  -ms-transform: translateY(-74px);
   -webkit-transform: translateY(-74px);
   transform: translateY(-74px);
 }

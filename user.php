@@ -36,7 +36,7 @@
         $id = $_SESSION['u_id'];
 
   //echo "$nm";
-  echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
+  echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;padding-bottom:10px;">';
   echo '<table border=0 cellpadding=2>';
 
   echo '<tr>';
@@ -89,7 +89,7 @@
 
   while( $row = mysqli_fetch_array($result,MYSQLI_ASSOC) ){
 
-      echo '<div class="bodytrbg restro"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
+      echo '<div class="bodytrbg restro booking"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
       echo '<table border=0 cellpadding=2>';
 
       echo '<tr>';

@@ -52,7 +52,7 @@
 }
 .restro{
     width: 60%;
-    margin:0px;
+    margin:10px;
 }
 .restro:hover{
 	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.8);
@@ -61,4 +61,8 @@
 .styledanchor{
     margin-right: 10px;
     width:110px;
+}
+.booking:hover,.booking:focus{
+    width: 60%;
+    margin:10px;
 }
