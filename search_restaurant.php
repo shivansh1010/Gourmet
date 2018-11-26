@@ -51,7 +51,7 @@
         echo '<td rowspan=2 ><a class="styledanchor"  href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
         }
         else {
-          echo '<td rowspan=2 ><a class="styledanchor errorm">Please Login First</a></td>';
+          echo '<td rowspan=2 class="field address" >Please Login First to Book</td>';
         }
 
         echo '</tr><tr>';
