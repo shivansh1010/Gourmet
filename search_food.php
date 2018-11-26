@@ -34,11 +34,15 @@
 
   if($sortby=='rating'){
     //sort by rating
-    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,s.star,f.type,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.star;");
+    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,f.type,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.star;");
   }
   else if($sortby='price'){
     //sort by price
+<<<<<<< HEAD
+    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,f.type,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
+=======
     $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,s.star,f.type,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
+>>>>>>> 62938764c963c274dbd4004214b11bafd9fdf397
   }
 
 
