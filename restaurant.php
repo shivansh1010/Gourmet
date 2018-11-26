@@ -59,7 +59,7 @@
 	        echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$restro_data["address"].', '.$restro_data["city"].'</td>';
 
 	        if ( $is_owner) {
-	        	echo '<td rowspan=2 ><a class="styledanchor"   href="add_serve_form.php?r_id='.$r_id.'">Add Item</a></td>';
+	        	echo '<td rowspan=2 ><a class="styledanchor"   href="add_serve_form.php?r_id='.$r_id.'">Add Food Item</a></td>';
 	        }
 
 	        echo '</tr><tr>';
@@ -76,20 +76,35 @@
 		//displaying menu items
 	    $q = "SELECT * FROM food f, serves s WHERE r_id = '$r_id' AND f_id = f.id;";
         $result = mysqli_query($link,$q);
-        echo '<br>';
+		echo '<div class="labelhead">Food Items available : </div>';
+        //echo '<br>';
         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+
+
+	        echo '<div class="bodytrbg food"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
+	        echo '<table border=0 cellpadding=2>';
+	        echo '<tr>';
+	        echo '<td  class="field name">'.$row["name"].'</td>';
+            $f_id = $row['f_id'];
+            if($is_owner){
+				echo '<td rowspan=2	><a class="styledanchor" href="./delete_item.php?r_id='.$r_id.'&f_id='.$f_id.'">Delete</a></td>';
+			}
+	        echo '</tr><tr>';
+	        echo '<td class="field mobile">&nbsp;&nbsp;₹&nbsp;'.$row["price"].'</td>';
+	        echo '</tr>';
+
+	        echo '</table>';
+	        echo '</div></div>';
+
+/*
             echo $row['name'].' ';
             echo $row['price'].' ';
             echo $row['discount'].' ';
             $f_id = $row['f_id'];
-            if($is_owner){
-                echo '<a href="./delete_item.php?r_id='.$r_id.'&f_id='.$f_id.'">Delete</a>';
-            }
-            echo '<br>';
+            echo '<br>';*/
         }
         echo '<br>';
 
-		// adding item in the menu
     ?>
 
 

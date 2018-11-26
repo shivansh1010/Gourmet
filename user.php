@@ -35,7 +35,6 @@
     }
         $id = $_SESSION['u_id'];
 
-    echo '<br>';
   //echo "$nm";
   echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
   echo '<table border=0 cellpadding=2>';
