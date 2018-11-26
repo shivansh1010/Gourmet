@@ -11,7 +11,6 @@
 	<select name='veg/nonveg'>
             <option value='Veg'>Veg</option>
             <option value='NonVeg'>NonVeg</option>
-            <option value='Both'>Both</option>
         </select>
 	<?php
 		echo '<input type="hidden" name="r_id" value="'.$_GET['r_id'].'">';
