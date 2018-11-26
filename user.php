@@ -20,13 +20,13 @@
 
     $id = $_SESSION['u_id'];
 
-	$q = "SELECT r.name, r.id FROM restaurant r, owner o WHERE '$id' = o.u_id AND o.r_id = r.id";
-	print($q);
+	$q = "SELECT r.id, r.name, r.address, r.city FROM restaurant r, owner o WHERE '$id' = o.u_id AND o.r_id = r.id";
+	//print($q);
     $result = mysqli_query($link,$q);
 
     while($row = mysqli_fetch_row($result)){
-		echo $row[0].' ';
-		echo '<a href="./restaurant.php?r_id='.$row[1].'">Edit Menu</a><br>'; 
+		echo $row[1].' - '.$row[2].' - '.$row[3].' - ';
+		echo '<a href="./restaurant.php?r_id='.$row[0].'">Edit Menu</a><br>';
 	}
 	echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
   ?>
