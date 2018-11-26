@@ -219,3 +219,33 @@ button:hover, button:focus {
     text-shadow:  0px 0px 7px rgba(210, 30, 40, 1);
 
 }
+.time{
+    text-shadow:  0px 0px 0px;
+    color: transparent;
+}
+.time:focus, .time:valid{
+    text-shadow:  0px 0px 10px  rgba(0, 0, 0, 1);
+    color: white;
+}
+.selectop {
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: #fff;
+    width: 180px;
+    height : 60px;
+    padding: 10px 5px;
+    color: #fff;
+    border: 0;
+    background: none;
+    border-bottom:  2px solid #fff;
+  	transition: all 0.15s ease-in-out;
+    /*border-radius: 3px 0 0 3px;*/
+}
+
+.selectop:focus {
+    width: 220px;
+}
+.selectop:focus option{
+    color:black;
+}
