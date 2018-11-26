@@ -50,7 +50,24 @@
 		echo $row[1].' - '.$row[2].' - '.$row[3].' - ';
 		echo '<a href="./restaurant.php?r_id='.$row[0].'">Edit Menu</a><br>';
 	}
-	echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
+  echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
+  
+  echo '<br>Booking status';
+	$q = "SELECT * FROM books WHERE '$id' = u_id ORDER BY date DESC";
+  $result = mysqli_query($link,$q);
+  if(!$result){
+    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
+
+  echo '<table>';
+  while( $row = mysqli_fetch_row($result) ){
+    echo '<tr>';
+    foreach($row as $key => $value){
+      echo '<td>'.$value.'</td>';
+    }
+    echo '</tr>';
+  }
+  echo '</table>';
   ?>
 </div>
  <br><br>
