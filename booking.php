@@ -22,6 +22,7 @@
 	</div>
 </div>
 <div class="headerbg"></div>
+<center>
     <?php
         //session_start();
         include('PhpMysqlConnectivity.php');
@@ -48,7 +49,6 @@
         $r_seats = $result[10];
         $r_address = $result[2];
     ?>
-<center>
     <?php
     ?>
     <form action='./book_seat.php' method="POST" class="formx">
@@ -76,8 +76,8 @@
                     echo 'Seats are not available.';
                 }
                 echo '<label><input type="number" name="no" min=1 max='.$r_seats.' value=1 required ><div class="label-text">Seats required</div></label>';
-                echo '<label><input class="time" type="time" name="start_time" required><div class="label-text">Start Time</div></label>';
-                echo '<label><input class="time" type="time" name="end_time" required><div class="label-text">End Time</div></label>';
+                echo '<label><input class="readonly time" type="time" name="start_time" required><div class="label-text">Start Time</div></label>';
+                echo '<label><input class="readonly time" type="time" name="end_time" required><div class="label-text">End Time</div></label>';
                 echo '<button type="submit" value="Check" name="check">Check Availability</button><br><br>';
             }
     ?>
