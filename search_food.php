@@ -30,14 +30,16 @@
 
 include("PhpMysqlConnectivity.php");
 
-
-  $q = "SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name='$name' AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;";
+  $patrn='"'."%"."$name"."%".'"';
+  echo "$patrn";
+  $q = "SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name like $patrn AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;";
+  //echo 'SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name like $patrn AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;';
   $result = mysqli_query($link,$q);
   if(!$result){
     print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
   }
-  $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
+  while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+  {
   echo '<br>';
     //echo "$nm";
     echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;">';
@@ -52,56 +54,34 @@ include("PhpMysqlConnectivity.php");
 
     echo '</table>';
     echo '</div></div>';
+    $nm='"'.$row["name"].'"';
+    $type=$row["type"];
+    $avg_r=$row["avg_r"];
+    $avg_p=$row["avg_p"];
 
-/*
-  foreach($row as $key => $value){
-    //use floor function
-    echo $key.' '.$value.' ';
-}*/
-  echo '<br>';
+    $result1=mysqli_query($link,"SELECT r.name,r.veg_nonveg,r.star,r.address,r.star,s.price,r.city FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=$nm;");
+    //echo "SELECT r.name,r.veg_nonveg,r.star,r.address FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=$nm;";
+    echo '<div class="labelhead">Available in following Restaurants :  </div>';
+    //echo mysqli_error($link);//,"SELECT r.name,r.veg_nonveg,r.star,r.address FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=;");
+    while($row1 = mysqli_fetch_array($result1))
+    {
+      //echo '<br>';
+      $nm=urlencode($row1['name']);
+        echo '<div class="bodytrbg restro"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
+        echo '<table border=0 cellpadding=2>';
+        echo '<tr>';
+        echo '<td  class="field name">'.$row1["name"].'  ('.$row1["veg_nonveg"].')</td>';
+        $piclen = 40*$row1["star"];
+        echo '<td rowspan=2 class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
+        echo '<td class="food_price" rowspan=2>₹'.$row1['price'].'</td>';
+        echo '</tr><tr>';
+        echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row1["address"].', '.$row1["city"].'</td>';
 
 
-      echo '<div class="labelhead">Available in following Restaurants :  </div>';
-
-
-
-  $sortby = 'rating';
-  if($sortby=='rating'){
-    //sort by rating
-    $q = "SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,r.address,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY r.star DESC;";
+        echo '</tr></table>';
+        echo '</a></div></div>';
+    }
   }
-  else if($sortby='price'){
-    //sort by price
-    $q = "SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,r.address,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;";
-  }
-
-  $result = mysqli_query($link,$q);
-  if(!$result){
-    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
-  }
-/*
-  echo '<table style="color:white;">';
-  echo '<th>Name</th><th>Star</th><th>Type</th><th>Price</th><th>City</th>';*/
-  while($row = mysqli_fetch_array($result))
-  {
-
-          $nm=$row['name'];
-            echo '<div class="bodytrbg restro"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
-            echo '<table border=0 cellpadding=2>';
-            echo '<tr>';
-            echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
-            $piclen = 40*$row["star"];
-            echo '<td rowspan=2 class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
-            echo '<td class="food_price" rowspan=2>₹'.$row['price'].'</td>';
-            echo '</tr><tr>';
-            echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-
-
-            echo '</tr></table>';
-            echo '</a></div></div>';
-
-  }
-  //echo '</table>'
 
 
  ?>
