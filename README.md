@@ -28,8 +28,8 @@ A DBMS Project
 - [x] Enter more data
 - [ ] Create Slide of databse layout
 
-- [ ] create back end for Delete item
-- [ ] Add back for end food item
+- [x] create back end for Delete item
+- [x] Add back for end food item
 - [x] In add_rest, modify fields
     - [x] rating is still integer (motta)
     - [x] insert time in proper form
