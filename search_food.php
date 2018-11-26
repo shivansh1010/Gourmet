@@ -61,7 +61,7 @@ include("PhpMysqlConnectivity.php");
 
     $result1=mysqli_query($link,"SELECT r.name,r.veg_nonveg,r.star,r.address,r.star,s.price,r.city FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=$nm;");
     //echo "SELECT r.name,r.veg_nonveg,r.star,r.address FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=$nm;";
-    echo '<div class="labelhead">Available in following Restaurants :  </div>';
+    echo '<br><div class="labelhead">Available in following Restaurants :  </div>';
     //echo mysqli_error($link);//,"SELECT r.name,r.veg_nonveg,r.star,r.address FROM restaurant r, serves s, food f WHERE r.id=s.r_id and f.id=s.f_id and f.name=;");
     while($row1 = mysqli_fetch_array($result1))
     {
