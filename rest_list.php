@@ -30,6 +30,9 @@
 
 // print this echo only when query returns a result
 
+        if (!isset($_SESSION['u_id'])) {
+            echo "<h4 style='color:rgb(255, 137, 2);;text-shadow:0px 0px 7px rgba(255, 236, 11, 0.75);font-family: \"Roboto\", sans-serif;margin:5px;margin-top:10px;'>For booking a table, please login first.</h4>";
+        }
         $i=0;
         while($row = mysqli_fetch_array($result))
         {
@@ -53,9 +56,6 @@
             if (isset($_SESSION['u_id'])) {
               echo '<td rowspan=2 ><a class="styledanchor" href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
             }
-            else {
-                echo '<td rowspan=2 class="field address" >Please Login First to Book</td>';
-            }
 
             echo '</tr><tr>';
             echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["mobile_no"].'</td>';
@@ -67,8 +67,11 @@
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) NOT BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
 
 // print this echo only when query returns a result
-
-
+        echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
+        if (!isset($_SESSION['u_id'])) {
+            echo "<h4 style='color:rgb(255, 137, 2);;text-shadow:0px 0px 7px rgba(255, 236, 11, 0.75);font-family: \"Roboto\", sans-serif;margin:5px;margin-top:10px;'>For booking a table, please login first.</h4>";
+        }
+        $i=0;
         while($row = mysqli_fetch_array($result))
         {
             if($i==0)
@@ -88,9 +91,6 @@
 
             if (isset($_SESSION['u_id'])) {
               echo '<td rowspan=2 ><a class="styledanchor"  href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
-            }
-            else {
-                echo '<td rowspan=2 class="field address" >Please Login First to Book</td>';
             }
 
             echo '</tr><tr>';
