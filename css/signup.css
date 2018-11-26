@@ -177,6 +177,12 @@ label input:valid + .label-text {
   -webkit-transform: translateY(-74px);
   transform: translateY(-74px);
 }
+ .readonly + .label-text {
+   font-size: 13px;
+   -webkit-transform: translateY(-74px);
+   transform: translateY(-74px);
+
+}
 
 button {
   background-color: rgba(30, 25, 20, 0.6);
