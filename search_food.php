@@ -31,7 +31,7 @@
 include("PhpMysqlConnectivity.php");
 
   $patrn='"'."%"."$name"."%".'"';
-  echo "$patrn";
+  //echo "$patrn";
   $q = "SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name like $patrn AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;";
   //echo 'SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name like $patrn AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;';
   $result = mysqli_query($link,$q);
