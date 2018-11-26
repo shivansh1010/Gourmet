@@ -34,16 +34,19 @@
 
   if($sortby=='rating'){
     //sort by rating
-    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,s.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.star;");
+    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.star;");
   }
   else if($sortby='price'){
     //sort by price
-    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,s.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
+    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
   }
 
 
+  $res = mysqli_query($link,"SELECT * from food where name='$name'");
 
 
+  $row=mysqli_fetch_array($res);
+  echo "<h1>".$row['name']." ".$row['type']."</h1>";
   echo '<table style="color:white;">';
   echo '<th>Name</th><th>Star</th><th>Type</th><th>Price</th><th>City</th>';
   while($row = mysqli_fetch_array($result))
