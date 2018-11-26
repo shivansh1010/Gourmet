@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Restaurants | Gourmet</title>
+    <title>Search Food | Gourmet</title>
     <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
     <link type="text/css" rel="stylesheet" href="css/search_food.css" />
 </head>
@@ -55,6 +55,7 @@ include("PhpMysqlConnectivity.php");
 
 /*
   foreach($row as $key => $value){
+    //use floor function
     echo $key.' '.$value.' ';
 }*/
   echo '<br>';

@@ -1,0 +1,63 @@
+.bodytrbg .field .name {
+    text-align: left;
+    vertical-align: middle;
+    font-family: "Roboto", sans-serif;
+    text-transform: none;
+    font-style: normal;
+    position: relative;
+    /* border: 0; */
+    color: #fff;
+}
+.bodytrbg .field .userid {
+    text-align: left;
+    vertical-align: middle;
+    font-family: "Roboto", sans-serif;
+    text-transform: none;
+    font-style: normal;
+    position: relative;
+    padding:10px;
+    padding-top:15px;
+    /* border: 0; */
+    color: #fff;
+}
+
+.bodytrbg .name{
+   font-size: 25px;
+   text-transform: uppercase;
+   position: relative;
+   float: left;
+   padding: 8px;
+   padding-bottom: 2px;
+   height: 25px;
+}
+
+.bodytrbg .mobile{
+   padding-bottom: 7px;
+}
+
+.labelhead{
+        /*background-color: rgba(0,0,0,0.5);*/
+        text-shadow: 0px 0px 7px rgba(0,0,0,1);
+        text-align: center;
+        vertical-align: middle;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        width:60%;
+        text-align:left;
+        margin-bottom: 5px;
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+}
+.restro{
+    width: 60%;
+    margin:0px;
+}
+.restro:hover{
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.8);
+    width:65%;
+}
+.styledanchor{
+    margin-right: 5px;
+}
