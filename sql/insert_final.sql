@@ -256,3 +256,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `mobile_no` (`mobile_no`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+DELIMITER $$
+CREATE TRIGGER `tri` BEFORE INSERT ON `serves` FOR EACH ROW BEGIN
+	UPDATE restaurant SET veg_nonveg='both' WHERE
+    new.r_id=id AND
+    veg_nonveg="veg" AND
+    (SELECT type from food where id=new.f_id)="nonveg";
+
+END
+$$
+DELIMITER ;
