@@ -25,9 +25,11 @@
         <div class="bodyhead">
         </div>
     <?php
-    echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Restaurants Currently Open</h1>";
         include("PhpMysqlConnectivity.php");
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
+
+// print this echo only when query returns a result
+        echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Restaurants Currently Open</h1>";
 
         while($row = mysqli_fetch_array($result))
         {
@@ -57,8 +59,10 @@
             echo '</table>';
             echo '</a></div></div>';
         }
-        echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) NOT BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
+
+// print this echo only when query returns a result
+        echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
 
         while($row = mysqli_fetch_array($result))
         {
