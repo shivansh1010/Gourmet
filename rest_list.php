@@ -40,8 +40,8 @@
         while($row = mysqli_fetch_array($result)) {
 
             $nm=$row["name"];
-
-            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
+            $url = urlencode($nm);
+            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=./search.php?search_type=restaurant&keyword='.$url.'>';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
@@ -63,12 +63,12 @@
             echo '</a></div></div>';
         }
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) NOT BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
-        
+
         if($result && !$result->num_rows == 0){
           echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
         }
-        
-        
+
+
         while($row = mysqli_fetch_array($result)){
 
             $nm=$row["name"];
