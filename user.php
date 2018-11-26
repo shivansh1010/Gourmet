@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User | Gourmet</title>
+    <title>User Profile | Gourmet</title>
+    <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
+    <link type="text/css" rel="stylesheet" href="css/user.css" />
 </head>
 <body>
+
+
+    <div class="header">
+      <div class="header_top" >
+        <div class="left_buttons">
+          <a href="./food_list.php" class="header_hover" >Cuisines</a>
+          <a href="./rest_list.php">Restaurant</a>
+        </div>
+        <div class="right_buttons">
+          <?php
+            include('login_buttons.php');
+          ?>
+        </div>
+      </div>
+    </div>
+    <div class="headerbg"></div>
+    <center>
+        <div class="bodyhead">
+        </div>
+<div style="color:white;">
 	<?php
-	session_start();
+	//session_start();
 	include('PhpMysqlConnectivity.php');
 
     if ( !isset($_SESSION['u_id'])) {
@@ -28,7 +50,27 @@
 		echo $row[1].' - '.$row[2].' - '.$row[3].' - ';
 		echo '<a href="./restaurant.php?r_id='.$row[0].'">Edit Menu</a><br>';
 	}
-	echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
+  echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
+  
+  echo '<br>Booking status';
+	$q = "SELECT * FROM books WHERE '$id' = u_id ORDER BY date DESC";
+  $result = mysqli_query($link,$q);
+  if(!$result){
+    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
+
+  echo '<table>';
+  while( $row = mysqli_fetch_row($result) ){
+    echo '<tr>';
+    foreach($row as $key => $value){
+      echo '<td>'.$value.'</td>';
+    }
+    echo '</tr>';
+  }
+  echo '</table>';
   ?>
-</body>
-</html>
+</div>
+ <br><br>
+ </center>
+ </body>
+ </html>

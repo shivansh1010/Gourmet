@@ -37,18 +37,18 @@ A DBMS Project
     - [x] ~~also display, if creation of restaurant was a success~~ redirect to restro page
     - [ ] ** add constraints** , ~~like limit time between 00:00 to 24:00~~ time limit to restro open and close time
 
-- [ ] In booking.php, add restaurant details in frontend
-    - [ ] also display, total number of seats available,
-    - ~~[ ] create constraint, id user enters more number of seats than available~~
+- [x] In booking.php, add restaurant details in frontend
+    - [x] also display, total number of seats available,
+    - ~~[x] create constraint, id user enters more number of seats than available~~
     - [ ] return some number, jo user physically restaurant ko dikhayega. **GUI**
 - [ ] **GUI** modify price in cuisines
 - [ ] **GUI** modify time input remove AM/PM add 24 hours format
 - [ ] In user.php, add a link to see all of his booking status
 - [x] Link `view restaurants` to search results
 - [ ] In add, serve form, mention if discount is price or %
-    - [ ] add constraint that `discount<price` or `0%<=discount<100%`
+    - [ ] add constraint that `0%<=discount<99%`(database problem)
 - [x] ~~Repeated error, on line28 of restaurant.php ``` Warning: Invalid argument supplied for foreach() in C:\wamp64\www\Gourmet\restaurant.php on line 28```~~
-- [ ] same naam ke kai restaurant add ho rahe hain
+- [ ] same naam ke kai restaurant add ho rahe hain(database problem)
 - [ ] ** add more info in search_food.php **
 
 ### **GUI**
@@ -64,7 +64,7 @@ A DBMS Project
 ### **if time remains**
 - [ ] add sort by option in `rest_list` and `food_list`
 - [ ] modify scroll bar
-
+- [ ] remove if and use try catch
 
 
 - ~~[ ] Try to separate back end and front end~~

@@ -23,13 +23,21 @@
             header('Location: '.'./#search');
         }
 
-        $r_name = mysqli_fetch_row(mysqli_query($link,"SELECT name FROM restaurant WHERE id = $r_id"))[0];
+        $result = mysqli_query($link,"SELECT * FROM restaurant r, seats s WHERE r.id = $r_id AND r.id = s.r_id");
+        $result = mysqli_fetch_row($result);
+        $r_name = $result[1];
+        $r_seats = $result[10];
+        $r_address = $result[2];
     ?>
 </head>
 <body>
     <?php 
-        echo '<div> Restaurant :-'.$r_name.'</div>';
-        echo '<div> User :- '.$u_name.'</div>';
+        echo '<div> Name : '.$r_name.'</div>';
+        echo '<div> Total no of seats : '.$r_seats.'</div>';
+        echo '<div> Address : '.$r_address.'</div>';
+
+        echo '<br><div> User :- '.$u_name.'</div>';
+        echo '<br>';
     ?>
     <form action='./book_seat.php' method="POST">
     <?php  
@@ -46,7 +54,7 @@
                 if(isset($_POST['res'])){
                     echo 'Seats are not avalable';
                 }
-                echo 'Number of seats <input type="number" name="no" min=1 required ><br>';
+                echo 'Number of seats <input type="number" name="no" min=1 max='.$r_seats.' value=1 required ><br>';
                 echo 'Time <input type="time" name="start_time" required>';
                 echo '<input type="time" name="end_time" required><br>';
                 echo '<input type="submit" value="Check" name="check">';
