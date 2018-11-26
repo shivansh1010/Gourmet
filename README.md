@@ -59,10 +59,11 @@ A DBMS Project
 - [ ] Add home button on all pages user login/logout buttons
 - [ ] Create css for user ~~and restro page~~
 - [ ] Create css for booking
-- [ ]
+- [ ] modify `please login First` 
 
 ### **if time remains**
 - [ ] add sort by option in `rest_list` and `food_list`
+- [ ] modify scroll bar
 
 
 
