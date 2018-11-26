@@ -25,35 +25,50 @@
     <div class="headerbg"></div>
     <center>
         <div class="bodyhead">
-        </div>
-<?php
-  include("PhpMysqlConnectivity.php");
+          </div>
+          <?php
 
+include("PhpMysqlConnectivity.php");
+
+
+  $q = "SELECT f.name, f.type, AVG(s.price) avg_p, AVG(s.star) avg_r FROM food f, serves s WHERE name='$name' AND f.id = s.f_id GROUP BY f.id ORDER BY name ASC , avg_r DESC;";
+  $result = mysqli_query($link,$q);
+  if(!$result){
+    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
+  $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  
+  echo '<br>';
+  echo '<h3>';
+  foreach($row as $key => $value){
+    echo $key.' '.$value.' ';
+  }
+  echo '<h3>';
+  echo '<br>';
+  
+  
+  
   $sortby = 'rating';
-  //$name = 'dosa';
-
   if($sortby=='rating'){
     //sort by rating
-    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.star;");
+    $q = "SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY r.star DESC;";
   }
   else if($sortby='price'){
     //sort by price
-    $result = mysqli_query($link,"SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;");
+    $q = "SELECT DISTINCT f.name,r.name,r.star,r.veg_nonveg,s.price,r.city FROM food f, serves s,restaurant r WHERE f.id = s.f_id AND s.r_id = r.id AND f.name = '$name'  ORDER BY s.price;";
   }
 
+  $result = mysqli_query($link,$q);
+  if(!$result){
+    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
 
-  $res = mysqli_query($link,"SELECT * from food where name='$name'");
-
-
-  $row=mysqli_fetch_array($res);
-  echo "<h1>".$row['name']." ".$row['type']."</h1>";
   echo '<table style="color:white;">';
   echo '<th>Name</th><th>Star</th><th>Type</th><th>Price</th><th>City</th>';
   while($row = mysqli_fetch_array($result))
   {
-    //echo '<h1>'.$row["star"].'</h1>';
     echo '<tr>';
-    echo '<td>'.$row["name"].'</td>'; //.$row['star'].$row['type'].$row['price'].$row['city'];
+    echo '<td>'.$row["name"].'</td>'; 
     echo '<td>'.$row["star"].'</td>';
     echo '<td>'.$row["veg_nonveg"].'</td>';
     echo '<td>'.$row["price"].'</td>';
