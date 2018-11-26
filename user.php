@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User | Gourmet</title>
+    <title>User Profile | Gourmet</title>
+    <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
+    <link type="text/css" rel="stylesheet" href="css/user.css" />
 </head>
 <body>
-  <?php
-  session_start();
+
+
+    <div class="header">
+      <div class="header_top" >
+        <div class="left_buttons">
+          <a href="./food_list.php" class="header_hover" >Cuisines</a>
+          <a href="./rest_list.php">Restaurant</a>
+        </div>
+        <div class="right_buttons">
+          <?php
+            include('login_buttons.php');
+          ?>
+        </div>
+      </div>
+    </div>
+    <div class="headerbg"></div>
+    <center>
+        <div class="bodyhead">
+        </div>
+<div style="color:white;">
+	<?php
+	//session_start();
 	include('PhpMysqlConnectivity.php');
 
     if ( !isset($_SESSION['u_id'])) {
@@ -30,7 +52,7 @@
 	}
   echo '<a href="./add_rest_form.php?u_id="'.$id.'>Add restaurant</a>';
   
-  echo 'Booking status';
+  echo '<br>Booking status';
 	$q = "SELECT * FROM books WHERE '$id' = u_id ORDER BY date DESC";
   $result = mysqli_query($link,$q);
   if(!$result){
@@ -47,5 +69,8 @@
   }
   echo '</table>';
   ?>
-</body>
-</html>
+</div>
+ <br><br>
+ </center>
+ </body>
+ </html>
