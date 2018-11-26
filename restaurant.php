@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Restaurants | Gourmet</title>
+    <title>Restaurant | Gourmet</title>
     <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
     <link type="text/css" rel="stylesheet" href="css/search_restro.css" />
 </head>

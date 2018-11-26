@@ -79,9 +79,12 @@
     $q = "SELECT r.name,qnty,start_time,end_time,date FROM books b, restaurant r WHERE '$id' = b.u_id AND r.id = b.r_id ORDER BY date DESC";
   $result = mysqli_query($link,$q);
 
-  echo '<br><div class="labelhead">Booking Status : </div>';
   if(!$result){
     print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
+  else{
+    if(!$result->num_rows == 0)
+      echo '<br><div class="labelhead">Booking Status : </div>';
   }
 
   while( $row = mysqli_fetch_array($result,MYSQLI_ASSOC) ){
@@ -99,10 +102,6 @@
 
       echo '</table>';
       echo '</div></div>';
-
-        // echo $_SESSION['u_name']; have to work on this
-
-
   }
   ?>
 </div>

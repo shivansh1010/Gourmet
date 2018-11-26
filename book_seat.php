@@ -14,14 +14,26 @@
 		$start_time = $_POST['start_time'];
 		$end_time = $_POST['end_time'];
 		$r_id = $_POST['r_id'];
+		$r_name = $_POST['r_name'];
 		$u_id = $_SESSION['u_id'];
-		
+		$u_name = $_SESSION['u_name'];
+
 		$q = "INSERT INTO `books`(`u_id`, `r_id`, `qnty`, `start_time`, `end_time`, `date`) VALUES ('$u_id','$r_id','$no', '$start_time','$end_time',CURDATE())";
 		$r = mysqli_query($link,$q);       
 
 		if ($r) {
 			//Create slip of booking
 			echo "done";
+			echo '<br>';
+			echo $no;
+			echo '<br>';
+			echo $start_time;
+			echo '<br>';			
+			echo $end_time;
+			echo '<br>';
+			echo $r_name;
+			echo '<br>';
+			echo $u_name;
 		}
 		else {
 			echo "Somthing Somewhere is wrong";
