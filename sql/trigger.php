@@ -1,0 +1,1 @@
+CREATE TRIGGER tri BEFORE INSERT ON serves FOR EACH ROW BEGIN UPDATE restaurant SET veg_nonveg='both' WHERE new.r_id=id AND veg_nonveg="veg" AND (SELECT type from food where id=new.f_id)="nonveg"; END 
