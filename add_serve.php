@@ -9,6 +9,7 @@
     $vnv = $_POST['veg/nonveg'];
 
     $q = "SELECT id FROM food WHERE name = '$name'";
+    echo $q.'<br>'.mysqli_error($link) ;        
     $result = mysqli_query($link, $q);
     $result = mysqli_fetch_array($result);
     
@@ -26,7 +27,7 @@
         echo 'one';
     }
     else{
-        $f_id = mysqli_fetch_array($result,MYSQLI_ASSOC)['id'];
+        $f_id = $result['id'];
         echo 'two';
     }
 
