@@ -47,7 +47,7 @@ include("PhpMysqlConnectivity.php");
     $piclen = 40*$row["avg_r"];
     echo '<td rowspan=2 class="field starttd" ><div class="star" style="width:'.$piclen.'px;"></div></td>';
     echo '</tr><tr>';
-    echo '<td class="field mobile">&nbsp;&nbsp;₹&nbsp;'.$row["avg_p"].' (Avg.)</td>';
+    echo '<td class="field mobile">&nbsp;&nbsp;₹&nbsp;'.floor($row["avg_p"]).' &nbsp;(Avg.)</td>';
     echo '</tr>';
 
     echo '</table>';
