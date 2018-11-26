@@ -45,11 +45,13 @@ A DBMS Project
 - [ ] **GUI** modify time input remove AM/PM add 24 hours format
 - [x] In user.php, add a link to see all of his booking status
 - [x] Link `view restaurants` to search results
-- [x] In add, serve form, mention if discount is price or % 
+- [x] In add, serve form, mention if discount is price or %
     - [x] add constraint that `0%<=discount<99%`(database problem)
 - [x] ~~Repeated error, on line28 of restaurant.php ``` Warning: Invalid argument supplied for foreach() in C:\wamp64\www\Gourmet\restaurant.php on line 28```~~
 - [ ] same naam ke kai restaurant add ho rahe hain(database problem)
-- [ ] ** add more info in search_food.php **
+- [x]  add more info in search_food.php
+- [ ] ** return if restaurant not found in `restaurant.php`**
+- [ ] ** restaurant not adding in `restaurant.php`**
 
 ### **GUI**
 
@@ -59,7 +61,7 @@ A DBMS Project
 - [ ] Add home button on all pages user login/logout buttons
 - [ ] Create css for user ~~and restro page~~
 - [ ] Create css for booking
-- [x] modify `please login First` 
+- [x] modify `please login First`
 
 ### **if time remains**
 - [ ] add sort by option in `rest_list` and `food_list`
