@@ -29,7 +29,7 @@ A DBMS Project
 - [ ] Create Slide of databse layout
 
 - [ ] create back end for Delete item
-- [ ] Add back for end food item 
+- [ ] Add back for end food item
 - [x] In add_rest, modify fields
     - [x] rating is still integer (motta)
     - [x] insert time in proper form
@@ -45,6 +45,10 @@ A DBMS Project
 - [ ] **GUI** modify time input remove AM/PM add 24 hours format
 - [ ] In user.php, add a link to see all of his booking status
 - [ ] Link `view restaurants` to search results
+- [ ] In add, serve form, mention if discount is price or %
+    - [ ] add constraint that `discount<price` or `0%<=discount<100%`
+- [ ] Repeated error, on line28 of restaurant.php ``` Warning: Invalid argument supplied for foreach() in C:\wamp64\www\Gourmet\restaurant.php on line 28```
+    - restaurant are not being added
 
 ### **GUI**
 
