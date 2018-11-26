@@ -66,5 +66,5 @@ A DBMS Project
 - [ ] modify scroll bar
 - [ ] remove if and use try catch
 
-
+(check with another table on books)[https://stackoverflow.com/questions/3880698/can-a-check-constraint-relate-to-another-table]
 - ~~[ ] Try to separate back end and front end~~
