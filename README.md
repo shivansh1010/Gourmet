@@ -33,9 +33,9 @@ A DBMS Project
 - [x] In add_rest, modify fields
     - [x] rating is still integer (motta)
     - [x] insert time in proper form
-- [ ] In serve_query, redirect to somewhere
+- [x] In serve_query, redirect to somewhere
     - [x] ~~also display, if creation of restaurant was a success~~ redirect to restro page
-    - [ ] ** add constraints**, ~~like limit time between 00:00 to 24:00~~ time limit to restro open and close time
+    - [ ] ** add constraints** , ~~like limit time between 00:00 to 24:00~~ time limit to restro open and close time
 
 - [ ] In booking.php, add restaurant details in frontend
     - [ ] also display, total number of seats available,
