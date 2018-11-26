@@ -78,9 +78,10 @@
             if (!isset($_SESSION['u_id'])) {
               echo "<h4 style='color:rgb(255, 137, 2);;text-shadow:0px 0px 7px rgba(255, 236, 11, 0.75);font-family: \"Roboto\", sans-serif;margin:5px;margin-top:10px;'>For booking a table, please login first.</h4>";
             }
-          $i+=1;
           }
-            echo '<div href=search.php?search_type=restaurant&keyword='.$nm.' class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
+            $i+=1;
+            $nm=$row["name"];
+            echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';
             echo '<td  class="field name">'.$row["name"].'  ('.$row["veg_nonveg"].')</td>';
