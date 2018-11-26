@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Restaurants | Gourmet</title>
-    <link type="text/css" rel="stylesheet" href="css/rest_list.css" />
+    <link type="text/css" rel="stylesheet" href="css/rest_list.css" >
 </head>
 <body>
 
@@ -28,21 +28,17 @@
         include("PhpMysqlConnectivity.php");
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
 
-// print this echo only when query returns a result
-
-        if (!isset($_SESSION['u_id'])) {
-
-        }
-        $i=0;
-        while($row = mysqli_fetch_array($result))
-        {
-          if($i==0){
+        if($result){
+          if(!$result->num_rows == 0){
             echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Open Currently</h1>";
             if (!isset($_SESSION['u_id'])) {
               echo "<h4 style='color:rgb(255, 137, 2);;text-shadow:0px 0px 7px rgba(255, 236, 11, 0.75);font-family: \"Roboto\", sans-serif;margin:5px;margin-top:10px;'>For booking a table, please login first.</h4>";
             }
           }
-          $i+=1;
+        }
+
+        while($row = mysqli_fetch_array($result)) {
+
             $nm=$row["name"];
 
             echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
@@ -67,19 +63,14 @@
             echo '</a></div></div>';
         }
         $result=mysqli_query($link,"SELECT DISTINCT a.id, a.name, a.address, a.mobile_no, a.star, a.city, a.veg_nonveg, a.open_time, a.close_time FROM restaurant a WHERE  a.city='jabalpur' AND CAST(CURRENT_TIME() AS time) NOT BETWEEN a.open_time AND a.close_time ORDER BY a.star DESC;");
-        $i=0;
-// print this echo only when query returns a result
-        //echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
-        while($row = mysqli_fetch_array($result))
-        {
+        
+        if($result && !$result->num_rows == 0){
+          echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
+        }
+        
+        
+        while($row = mysqli_fetch_array($result)){
 
-          if($i==0){
-            echo "<h1 style='color:white;text-shadow:0px 2px 7px #000;font-family: \"Roboto\", sans-serif;margin:5px;margin-top:50px;'>Closed Now</h1>";
-            if (!isset($_SESSION['u_id'])) {
-              echo "<h4 style='color:rgb(255, 137, 2);;text-shadow:0px 0px 7px rgba(255, 236, 11, 0.75);font-family: \"Roboto\", sans-serif;margin:5px;margin-top:10px;'>For booking a table, please login first.</h4>";
-            }
-          }
-            $i+=1;
             $nm=$row["name"];
             echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
             echo '<table border=0 cellpadding=2>';
@@ -90,10 +81,6 @@
             echo '<td class="field open">'.$row["open_time"].' - '.$row["close_time"].'</td>';
             echo '</tr><tr>';
             echo '<td colspan=2 class="field address">&nbsp;&nbsp;'.$row["address"].', '.$row["city"].'</td>';
-
-            if (isset($_SESSION['u_id'])) {
-              echo '<td rowspan=2 ><a class="styledanchor"  href="./booking.php?r_id='.$row['id'].'">Book Table</a></td>';
-            }
 
             echo '</tr><tr>';
             echo '<td colspan=2 class="field mobile">&nbsp;&nbsp;'.$row["mobile_no"].'</td>';
