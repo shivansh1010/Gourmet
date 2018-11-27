@@ -271,9 +271,9 @@ DELIMITER ;
 
 ----------------------------------------------------------------------
 
-
+DROP trigger ttri1;
 DELIMITER $$
-CREATE TRIGGER `tri1` BEFORE INSERT ON `restaurant` FOR EACH ROW BEGIN
+CREATE TRIGGER `tri1` AFTER INSERT ON `restaurant` FOR EACH ROW BEGIN
 	INSERT INTO seats VALUES(new.id,20);
 
 END
