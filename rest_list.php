@@ -71,7 +71,7 @@
 
         while($row = mysqli_fetch_array($result)){
 
-            $nm=$row["name"];
+            $nm=urlencode($row["name"]);
             echo '<div class="bodytrbg"><div style="background:rgba(50,50,50,0.8);border-radius: 5px;"><a href=search.php?search_type=restaurant&keyword='.$nm.'>';
             echo '<table border=0 cellpadding=2>';
             echo '<tr>';

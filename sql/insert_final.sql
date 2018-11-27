@@ -267,3 +267,15 @@ CREATE TRIGGER `tri` BEFORE INSERT ON `serves` FOR EACH ROW BEGIN
 END
 $$
 DELIMITER ;
+
+
+----------------------------------------------------------------------
+
+
+DELIMITER $$
+CREATE TRIGGER `tri1` BEFORE INSERT ON `restaurant` FOR EACH ROW BEGIN
+	INSERT INTO seats VALUES(new.id,20);
+
+END
+$$
+DELIMITER ;
