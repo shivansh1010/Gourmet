@@ -22,8 +22,8 @@ A DBMS Project
 - [x] Create database
 - [x] Enter some for dev data
 - [x] ~~find~~ create css
-- [ ] Create Front End (80%)
-- [ ] Create Back End (95%)
+- [ ] Create Front End (99%)
+- [ ] Create Back End (98%)
 - [x] add login and signup warning CSS
 - [x] Enter more data
 - [ ] Create Slide of databse layout
@@ -61,7 +61,7 @@ A DBMS Project
     - [x] create search restaurant
 - [ ] Add home button on all pages user login/logout buttons
 - [x] Create css for user ~~and restro page~~
-- [ ] Create css for booking
+- [x] Create css for booking
 - [x] modify `please login First`
 
 ### **if time remains**
