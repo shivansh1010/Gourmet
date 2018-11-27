@@ -115,7 +115,7 @@
 		$st = $r[0] >= $no ? 'true' : 'false';
 
 		echo '<form id="myForm" action="./booking.php" method="post">';
-		echo '<input type = "hidden" name = "res" value = '.(string)$st.'>';
+		echo '<input type = "hidden" name = "res" value = '.$st.'>';
 		echo '<input type = "hidden" name = "no" value = '.$no.'>';
 		echo '<input type = "hidden" name = "st" value = '.$start_time.'>';
 		echo '<input type = "hidden" name = "et" value = '.$end_time.'>';

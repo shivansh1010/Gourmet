@@ -64,7 +64,7 @@
             echo '<input type = "hidden" name = "r_id" value = '.$r_id.'>';
             echo '<input type = "hidden" name = "r_name" value = '.$r_name.'>';
 
-            if (isset($_POST['res']) && $_POST['res']) {
+            if (isset($_POST['res']) && $_POST['res']=='true') {
                 echo '<label><input class="readonly" type="number" name="no" min=1 value='.$_POST['no'].' readonly ><div class="label-text">Seats required</div></label>';
                 echo '<label><input class="readonly" type="time" name="start_time" value='.$_POST['st'].' readonly ><div class="label-text">Start Time</div></label> ';
                 echo '<label><input class="readonly" type="time" name="end_time" value='.$_POST['et'].' readonly ><div class="label-text">End Time</div></label>';
