@@ -9,6 +9,7 @@
   $open_time = $_POST['open_time'];
   $close_time = $_POST['close_time'];
   $vnv = $_POST['veg/nonveg'];
+  $no = $_POST['no'];
   $q = "INSERT INTO `restaurant`( `name`, `address`, `mobile_no`, `star`, `city`, `open_time`, `close_time`, `veg_nonveg`) VALUES ('$name','$adress','$mobile_no','$star','$twon','$open_time','$close_time','$vnv')";
   $result = mysqli_query($link,$q);
   if(!$result){
@@ -21,6 +22,7 @@
     print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
   }
 
+  
   $r_id = mysqli_fetch_array($result)[0];
   $u_id = $_SESSION['u_id'];
   $q = "INSERT INTO `owner`(`u_id`, `r_id`) VALUES ('$u_id',$r_id)";
@@ -28,6 +30,11 @@
   if(!$result){
     print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
   }
-
+  
+  $q = "INSERT INTO `seats`(`r_id`, `total`) VALUES ($r_id,$no)";
+  $result = mysqli_query($link,$q);
+  if(!$result){
+    print("Somthing somewhere went wrong<br>".$q.'<br>'.mysqli_error($link));
+  }
   header('Location: '.'restaurant.php?r_id='.$r_id);
  ?>

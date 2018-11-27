@@ -57,7 +57,12 @@
                     <option value='NonVeg'>Non Veg</option>
                     <option value='Both'>Both</option>
                 </select>
-            </label><br>
+            </label>
+            <label>
+                <input type='text' name='no' required>
+                <div class="label-text">No of Seats for Booking</div>
+            </label>
+            <br>
             <button type='submit'>Create Restaurant</button><br><br>
 		</div>
     </form>
