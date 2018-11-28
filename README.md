@@ -8,3 +8,6 @@
 - Manage Restaurant Menu
 - user can book table 
 - List of foods and restaurants 
+
+## Contributers
+@anshuman16423 , @janglee123 , @sdhiman99
