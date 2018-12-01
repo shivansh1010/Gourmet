@@ -1,13 +1,31 @@
 # Gourmet
-**DBMS focused project for semester course.**
+
+A online portal that can help users see the food menu of any of the registered Restaurants, and book tables in it. Users can also register their restaurants and add/delete food items from it.
+
+_DBMS focused project for semester course. Built in PHP with MySQL at back-end. Front-end styling done in CSS._
 
 ## Features
-- Login/Signup
-- Food,Restaurant Search
+- Login / Signup
+- Search by Food, Restaurant
 - Create Restaurant Page
 - Manage Restaurant Menu
-- user can book table 
-- List of foods and restaurants 
+- User can book table
+- List of Food and Restaurants
 
 ## Contributers
-@anshuman16423 , @janglee123 , @sdhiman99
+ @janglee123, @sdhiman99, @anshuman16423
+
+## Screenshots
+#### Home Page
+![Home Page](/images/screenshots/1.jpeg)
+
+#### Food List
+![Food List](/images/screenshots/2.jpg)
+
+#### Restaurant Menu
+![Restaurant Menu](/images/screenshots/3.jpg)
+
+#### Sign Up Page
+![Sign Up](/images/screenshots/4.jpg)
+
+#### Few more pages ....
