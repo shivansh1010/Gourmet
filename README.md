@@ -13,7 +13,7 @@ _DBMS focused project for semester course. Built in PHP with MySQL at back-end. 
 - List of Food and Restaurants
 
 ## Contributers
- @janglee123, @sdhiman99, @anshuman16423
+ [@janglee123](https://github.com/janglee123), [@sdhiman99](https://github.com/sdhiman99), [@anshuman16423](https://github.com/anshuman16423)
 
 ## Screenshots
 #### Home Page
