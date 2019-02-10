@@ -54,12 +54,7 @@
     <form action='./book_seat.php' method="POST" class="formx">
 		<div class="formbgcolor">
     <?php
-	/*
-        echo '<div> Name : '.$r_name.'</div>';
-        echo '<div> Total no of seats : '.$r_seats.'</div>';
-        echo '<div> Address : '.$r_address.'</div>';
-
-        echo '<br><div> User :- '.$u_name.'</div>';*/
+	
         echo '<br>';
             echo '<input type = "hidden" name = "r_id" value = '.$r_id.'>';
             echo '<input type = "hidden" name = "r_name" value = '.$r_name.'>';
