@@ -2,7 +2,7 @@
 
 A online portal that can help users see the food menu of any of the registered Restaurants, and book tables in it. Users can also register their restaurants and add/delete food items from it.
 
-_DBMS focused project for semester course. Built in PHP with MySQL at back-end. Front-end styling done in CSS._
+_DBMS focused project for semester course, containing all the necessary functionalities of creating an account and CRUD operations. Built in PHP with MySQL at back-end. Front-end styling done in CSS._
 
 ## Features
 - Login / Signup
