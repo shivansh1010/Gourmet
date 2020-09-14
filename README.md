@@ -33,5 +33,5 @@ _DBMS focused project for semester course, containing all the necessary function
 <!-- PleaseDontEditThisComment367100423 -->
 <!-- Please don't add anything between these two comments -->
 ## Have some fun! 😊 
-<img src="https://www.monkeyuser.com/assets/images/2016/17-developer-productivity.png">
+<img src="https://pbs.twimg.com/media/ECrFqfpXYAAnPh3?format=jpg&name=large">
 <!-- PleaseDontEditThisComment807136229 -->
