@@ -1,4 +1,5 @@
 name: Comic Action
+
 # Schedule the Action to run daily at 8AM
 on: 
   push: 
