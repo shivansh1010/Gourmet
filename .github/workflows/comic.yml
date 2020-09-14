@@ -1,9 +1,6 @@
 name: Comic Action
-
 # Schedule the Action to run daily at 8AM
 on: 
-  schedule:
-    - cron: '0 8 * * *'
   push: 
     branches: 
       - master
